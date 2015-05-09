@@ -1,0 +1,20 @@
+extends layout
+
+block content
+
+  .row#projectDescription
+    .col-md-12
+      .projectDescription.lightGreen
+        h1#projectTitle
+        h3#projectDates(style='position: absolute; top: 18px; right: 55px;')
+        h4#projectTags
+        h3#projectLink
+
+        i.fa.fa-close.fa-2x(onClick='closeProjectDesc(this);' style='position: absolute; top: 10px; right: 23px;')
+
+  .row
+
+    each project, key in projects
+      .col-md-4
+        - var color = (key%2==0)? 'green' : 'lightGreen'
+        button(onClick='showProjetDesc(#{project.id});', class=color).tileProject= project.tileContent

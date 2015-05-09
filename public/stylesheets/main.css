@@ -1,0 +1,123 @@
+html, body, button {
+  background-color : #F9F9F9;
+  font-family      : Roboto;
+  font-weight      : 300;
+}
+
+a {
+  color : #333333;
+}
+
+a:hover {
+  color : black;
+}
+
+.top-line {
+  font-size   : 3em;
+  font-weight : 100;
+  line-height : 1em;
+  margin      : 1.5% 0 2% 0%;
+}
+
+.section {
+  text-align  : right;
+  font-style  : italic;
+}
+
+.social {
+}
+
+.social-icon {
+  margin-right : 20px;
+}
+
+.myTextarea {
+  height : 11.5em;
+}
+
+.photoImg {
+  max-width : 150px;
+  height    : auto;
+}
+
+.center {
+  text-align : center;
+}
+
+.right {
+  text-align : right;
+}
+
+.bottomRow {
+  margin-top : 25px;
+}
+
+
+.name {
+  font-size   : 10em;
+  line-height : 1em;
+  margin-top  : 7%;
+  display     : inline-block;
+  cursor      : pointer;
+}
+
+.name-line {
+    text-align  : right;
+}
+
+.tile {
+  width     : 100%;
+  font-size : 3em;
+  padding   : 1.3em 0em;
+}
+
+.tile:hover {
+  border : 1px solid grey;
+}
+
+.tileProject {
+  width         : 100%;
+  font-size     : 2em;
+  padding       : 1.3em 0em;
+  margin-bottom : 25px;
+}
+
+.tileProject:hover {
+  border : 1px solid grey;
+}
+
+
+.tileDescription {
+  width : 100%;
+}
+
+
+.hidden {
+  display : none;
+}
+
+
+.message {
+  text-align  : center;
+  font-size   : 3em;
+  line-height : 1em;
+  padding     : 10px 20px;
+}
+
+#projectDescription {
+  display : none;
+}
+
+.projectDescription {
+  padding       : 10px;
+  margin-bottom : 25px;
+}
+
+.fa-close:hover {
+  background-color : #dedede;
+}
+
+.blog_link {
+  line-height : 1.5em;
+  font-size   : 1.1em;
+}

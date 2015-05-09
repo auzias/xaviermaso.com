@@ -1,0 +1,42 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/components/fontawesome/css/font-awesome.min.css')
+    link(rel='stylesheet', href='/stylesheets/colors.css')
+    link(rel='stylesheet', href='/stylesheets/main.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:400,100,300')
+
+  body
+    .container
+
+      .row.name-line
+        .name(onClick='location.href="/"') Xavier Maso
+
+      .row.top-line
+        .col-md-8
+          .row.social
+            a(href='mailto:xavier.maso@net-c.com')
+              i.fa.fa-envelope-o(alt='Email image link mailing to xavier.maso@net-c.com').social-icon
+            a(href='https://twitter.com/Pamplemouss_', target='_blank')
+              i.fa.fa-twitter(alt='Twitter image link for @Pamplemouss_.').social-icon
+            a(href='https://github.com/Pamplemousse', target='_blank')
+              i.fa.fa-github(alt="Github image link for Pamplemousse's account").social-icon
+            a(href='https://www.linkedin.com/pub/xavier-maso/39/4a/96b', target='_blank')
+              i.fa.fa-linkedin(alt="Linkedin image link for Xavier Maso's linkedin profile").social-icon
+
+        .col-md-4.section
+          .row
+            = section
+
+      block content
+
+      .row.footer
+        .col-md-2.col-md-offset-10
+          .section
+            h6 Such reserved rights.
+
+
+  script(type='text/javascript' , src='/components/jquery/dist/jquery.min.js')
+  script(type='text/javascript' , src='/javascripts/scripts.js')
