@@ -3,16 +3,16 @@
   * powered by [expressjs](http://expressjs.com/)
   * running live at [xaviermaso.com](http://xaviermaso.com/)
 
-### Build the js bundle
+## Bundle the assets
 
-```
-./node_modules/browserify/bin/cmd.js public/javascripts/main.js > public/javascripts/bundle.js
-```
+```bash
+# bundle css and js
+npm run build
 
-### Build the css bundle
-
-```
-./node_modules/stylus/bin/stylus public/stylesheets/main.css --include-css -o public/stylesheets/bundle.css
+# bundle only css
+npm run build-css
+# bundle only js
+npm run build-js
 ```
 
 ## Todo
