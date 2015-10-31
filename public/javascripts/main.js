@@ -1,4 +1,6 @@
-function showProjetDesc (projectId) {
+var $ = require('jquery')
+
+window.showProjetDesc = function (projectId) {
   $.get(
     '/projects/' + projectId,
     function (project) {
@@ -23,7 +25,7 @@ function showProjetDesc (projectId) {
   )
 }
 
-function closeProjectDesc (element) {
+window.closeProjectDesc = function (element) {
   $('#projectDescription').hide()
   $('#projectDescription').removeClass('topRow')
   $($('.bottomRow')[0]).removeClass('bottomRow').addClass('topRow')
