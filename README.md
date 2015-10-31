@@ -7,4 +7,6 @@
 ## Todo
 
   * minify front-end assets
+  * get rid of bower
+  * get rid of gulp
   * test the code
