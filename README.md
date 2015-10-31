@@ -9,9 +9,14 @@
 ./node_modules/browserify/bin/cmd.js public/javascripts/main.js > public/javascripts/bundle.js
 ```
 
+### Build the css bundle
+
+```
+./node_modules/stylus/bin/stylus public/stylesheets/main.css --include-css -o public/stylesheets/bundle.css
+```
+
 ## Todo
 
   * minify front-end assets
-  * get rid of bower
   * get rid of gulp
   * test the code
