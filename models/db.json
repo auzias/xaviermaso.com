@@ -1,52 +1,52 @@
 {
   "projects": [{
-    "id": 1,
+    "id": "1",
     "tileContent": "librarybox",
     "title": "LibraryBox",
     "dates": "december 2014 - today",
     "tags": "angularjs, gulp, associative entrepreneurship",
     "link": "https://github.com/Labx/LibraryBox-app"
   }, {
-    "id": 2,
+    "id": "2",
     "tileContent": "cheminot.cer-sncf-bx.org",
     "title": "Front-end for SNCF's employees",
     "dates": "december 2013 - august 2014",
     "tags": "project management, ruby-on-rails, front-end development (sass, coffeescript, slim), system administration, communication",
     "link": "http://cheminot.cer-sncf-bx.org"
   }, {
-    "id": 3,
+    "id": "3",
     "tileContent": "carrotmob",
     "title": "CarrotMob France",
     "dates": "june 2014 - september 2014",
     "tags": "nodejs stack (sailsjs, grunt, bower), associative entrepreneurship",
     "link": "http://www.carrotmob.fr/"
   }, {
-    "id": 4,
+    "id": "4",
     "tileContent": "wheredrop",
     "title": "Wheredrop",
     "dates": "april - june 2013",
     "tags": "angularjs, entrepreneurship",
     "link": "http://wheredrop.eu01.aws.af.cm/#"
   }, {
-    "id": 5,
+    "id": "5",
     "tileContent": "bemydiary @ bemyapp",
     "title": "BeMyDiary",
     "dates": "november 2012 - march 2013",
     "tags": "project management, communication, entrepreneurship"
   }, {
-    "id": 6,
+    "id": "6",
     "tileContent": "la console @ swto",
     "title": "Startup Weekend Toulouse",
     "dates": "march 2013",
     "tags": "project management, communication, marketing, entrepreneurship"
   }, {
-    "id": 7,
+    "id": "7",
     "tileContent": "cooking @ imaginecup",
     "title": "CooKing",
     "dates": "december 2010 - may 2011",
     "tags":  "project management, game development"
   }, {
-    "id": 8,
+    "id": "8",
     "tileContent": "humanutty @ imaginecup",
     "title": "HumaNutty",
     "dates":"december 2012 - may 2013",

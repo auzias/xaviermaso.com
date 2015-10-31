@@ -17,7 +17,7 @@ module.exports = (function() {
     return all().then(function(data) {
       var returnedProject;
       data.forEach(function(project) {
-        if(project.id == id) {
+        if (project.id === id) {
           returnedProject = project;
         }
       });
