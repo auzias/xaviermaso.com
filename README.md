@@ -7,6 +7,9 @@
 ```bash
 # automatically bundle css on change
 npm run watch-css
+
+# automatically bundle js on change
+npm run watch-js
 ```
 
 ## Bundle the assets

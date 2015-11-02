@@ -21,7 +21,7 @@ gulp.task('serve', function () {
     'views/*.jade',
     'routes/*.js',
     'models/*.js',
-    'public/javascripts/*.js',
+    'public/javascripts/bundle.js',
     'public/stylesheets/bundle.css'
   ], function () {
     server.notify.apply(server, arguments)
