@@ -1,5 +1,6 @@
 logs
 *.log
 node_modules
+public/fonts/
 public/javascripts/bundle.js
 public/stylesheets/bundle.css
