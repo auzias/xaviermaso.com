@@ -22,7 +22,7 @@ gulp.task('serve', function () {
     'routes/*.js',
     'models/*.js',
     'public/javascripts/*.js',
-    'public/stylesheets/*.css'
+    'public/stylesheets/bundle.css'
   ], function () {
     server.notify.apply(server, arguments)
   })

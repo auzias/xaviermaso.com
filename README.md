@@ -3,6 +3,12 @@
   * powered by [expressjs](http://expressjs.com/)
   * running live at [xaviermaso.com](http://xaviermaso.com/)
 
+## Development
+```bash
+# automatically bundle css on change
+npm run watch-css
+```
+
 ## Bundle the assets
 
 ```bash

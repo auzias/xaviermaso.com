@@ -7,7 +7,8 @@
     "build": "npm run copy-fonts && npm run build-css && npm run build-js",
     "build-js": "browserify public/javascripts/main.js > public/javascripts/bundle.js",
     "build-css": "stylus public/stylesheets/main.css --include-css -o public/stylesheets/bundle.css",
-    "copy-fonts": "cp -R node_modules/font-awesome/fonts public/"
+    "copy-fonts": "cp -R node_modules/font-awesome/fonts public/",
+    "watch-css": "stylus -w public/stylesheets/main.css --include-css -o public/stylesheets/bundle.css"
   },
   "dependencies": {
     "body-parser": "~1.12.2",
