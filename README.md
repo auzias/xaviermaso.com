@@ -1,5 +1,7 @@
 # xavier maso's website
 
+  ![](https://travis-ci.org/Pamplemousse/xaviermaso.com.svg?branch=master)
+
   * powered by [expressjs](http://expressjs.com/)
   * running live at [xaviermaso.com](http://xaviermaso.com/)
 
