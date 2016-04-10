@@ -30,6 +30,7 @@
     "gulp-live-server": "0.0.14",
     "gulp-nsp": "^0.4.5",
     "gulp-shrinkwrap": "^2.0.1",
-    "nsp": "^1.0.3"
+    "nsp": "^1.0.3",
+    "watchify": "^3.7.0"
   }
 }
