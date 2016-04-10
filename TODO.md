@@ -4,7 +4,6 @@
 * get rid of gulp
 * test the code
 * use [helmet](https://www.npmjs.com/package/helmet)
-* use strict mode
 
 #### content
 * differentiate serious projects from learning ones

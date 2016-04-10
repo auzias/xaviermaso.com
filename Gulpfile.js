@@ -1,3 +1,5 @@
+'use strict'
+
 var gulp = require('gulp')
 var gls = require('gulp-live-server')
 var gulpNSP = require('gulp-nsp')

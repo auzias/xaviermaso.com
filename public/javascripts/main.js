@@ -1,3 +1,5 @@
+'use strict'
+
 var $ = require('jquery')
 
 window.showProjetDesc = function (projectId) {

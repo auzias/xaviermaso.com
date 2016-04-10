@@ -1,3 +1,5 @@
+'use strict'
+
 // Yes, the db is currently a json file...
 var readFile = require('fs-readfile-promise')
 var projects = readFile('models/db.json', 'utf8')
