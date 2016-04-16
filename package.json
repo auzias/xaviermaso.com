@@ -4,10 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-    "build": "npm run build:fonts && npm run build:css && npm run build:js",
+    "build": "npm run build:fonts && npm run build:css && npm run build:js && npm run minify",
     "build:js": "browserify public/javascripts/main.js > public/javascripts/bundle.js",
     "build:css": "stylus public/stylesheets/main.css --include-css -o public/stylesheets/bundle.css",
     "build:fonts": "cp -R node_modules/font-awesome/fonts public/",
+    "minify": "npm run minify:js && npm run minify:css",
+    "minify:js": "uglifyjs -cm -o public/javascripts/bundle.min.js -- public/javascripts/bundle.js",
+    "minify:css": "cleancss -o public/stylesheets/bundle.min.css public/stylesheets/bundle.css",
     "watch":"npm run watch:css & npm run watch:js & npm run start",
     "watch:js": "watchify public/javascripts/main.js -o public/javascripts/bundle.js -v",
     "watch:css": "stylus -w public/stylesheets/main.css --include-css -o public/stylesheets/bundle.css"

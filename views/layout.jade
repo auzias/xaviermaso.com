@@ -2,7 +2,10 @@ doctype html
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/bundle.css')
+    if (process.env.NODE_ENV == 'production')
+      link(rel='stylesheet', href='/stylesheets/bundle.min.css')
+    else
+      link(rel='stylesheet', href='/stylesheets/bundle.css')
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:400,100,300')
 
   body
@@ -35,4 +38,7 @@ html
             h6 Such reserved rights.
 
 
-  script(type='text/javascript' , src='/javascripts/bundle.js')
+  if (process.env.NODE_ENV == 'production')
+    script(type='text/javascript' , src='/javascripts/bundle.min.js')
+  else
+    script(type='text/javascript' , src='/javascripts/bundle.js')
