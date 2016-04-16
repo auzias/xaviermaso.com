@@ -1,7 +1,6 @@
 'use strict'
 
 var gulp = require('gulp')
-var gls = require('gulp-live-server')
 var gulpNSP = require('gulp-nsp')
 var shrinkwrap = require('gulp-shrinkwrap')
 
@@ -15,24 +14,9 @@ gulp.task('shrinkwrap', function () {
     .pipe(gulp.dest('./'))
 })
 
-gulp.task('serve', function () {
-  var server = gls.new('app.js', 8082, {env: {NODE_ENV: 'development'}})
-  server.start()
-
-  gulp.watch([
-    'views/*.jade',
-    'routes/*.js',
-    'models/*.js',
-    'public/javascripts/bundle.js',
-    'public/stylesheets/bundle.css'
-  ], function () {
-    server.notify.apply(server, arguments)
-  })
-})
-
 gulp.task('watch', function () {
   gulp.watch('package.json', ['shrinkwrap'])
   gulp.watch('npm-shrinkwrap.json', ['nsp'])
 })
 
-gulp.task('default', ['serve', 'watch'])
+gulp.task('default', ['watch'])
