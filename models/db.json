@@ -18,15 +18,13 @@
     "tileContent": "carrotmob",
     "title": "CarrotMob France",
     "dates": "june 2014 - september 2014",
-    "tags": "nodejs stack (sailsjs, grunt, bower), associative entrepreneurship",
-    "link": "http://www.carrotmob.fr/"
+    "tags": "nodejs stack (sailsjs, grunt, bower), associative entrepreneurship"
   }, {
     "id": "4",
     "tileContent": "wheredrop",
     "title": "Wheredrop",
     "dates": "april - june 2013",
-    "tags": "angularjs, entrepreneurship",
-    "link": "http://wheredrop.eu01.aws.af.cm/#"
+    "tags": "angularjs, entrepreneurship"
   }, {
     "id": "5",
     "tileContent": "bemydiary @ bemyapp",
