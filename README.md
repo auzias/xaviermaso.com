@@ -5,23 +5,16 @@
   * powered by [expressjs](http://expressjs.com/)
   * running live at [xaviermaso.com](http://xaviermaso.com/)
 
-## Development
-```bash
-# automatically bundle css on change
-npm run watch-css
+## development
 
-# automatically bundle js on change
-npm run watch-js
+```bash
+# automatically bundle js and css on change
+npm run watch
 ```
 
-## Bundle the assets
+## bundle the assets
 
 ```bash
-# bundle css and js
+# bundle and minify css, js and fonts
 npm run build
-
-# bundle only css
-npm run build-css
-# bundle only js
-npm run build-js
 ```
