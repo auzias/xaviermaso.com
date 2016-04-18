@@ -1,5 +1,4 @@
 #### dev / tools
-* get rid of gulp
 * test the code
 * use [helmet](https://www.npmjs.com/package/helmet)
 

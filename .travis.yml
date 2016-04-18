@@ -4,7 +4,8 @@ node_js:
     - "5"
 
 before_install:
-  - npm install -g standard
+  - npm install -g standard nsp
 
 script:
   - standard
+  - nsp check
