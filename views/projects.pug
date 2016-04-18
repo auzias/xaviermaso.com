@@ -16,4 +16,4 @@ block content
     each project, key in projects
       .col-md-4
         - var color = (key%2==0)? 'green' : 'lightGreen'
-        button(onClick='showProjetDesc(#{project.id});', class=color).tileProject= project.tileContent
+        button(onClick='showProjetDesc(this.id);', class=color, id=project.id).tileProject= project.tileContent
