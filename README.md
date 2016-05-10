@@ -18,3 +18,11 @@ npm run watch
 # bundle and minify css, js and fonts
 npm run build
 ```
+
+## run the app
+```bash
+docker run \
+  -e NODE_ENV=production
+  -p 8080:80
+  xaviermaso.com
+```
