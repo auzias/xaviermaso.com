@@ -1,3 +1,5 @@
-FROM node:4-onbuild
+FROM node:6-onbuild
+
+RUN npm run build
 
 EXPOSE 80

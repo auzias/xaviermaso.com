@@ -22,7 +22,8 @@ npm run build
 ## run the app
 ```bash
 docker run \
-  -e NODE_ENV=production
-  -p 8080:80
-  xaviermaso.com
+  --name xaviermaso.com \
+  -e NODE_ENV=production \
+  -p 8080:80 \
+  pamplemousse/xaviermaso.com
 ```
