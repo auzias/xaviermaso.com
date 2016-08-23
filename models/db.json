@@ -1,54 +1,73 @@
 {
   "projects": [{
+    "id": "0",
+    "tileContent": "redshield",
+    "title": "RedShield (pro)",
+    "dates": "january 2015 - april 2016",
+    "tags": "ruby-on-rails, front-end development, devops, R&D",
+    "links": "https://www.redshield.co/"
+  }, {
     "id": "1",
+    "tileContent": "personnal stack",
+    "title": "Personnal Stack",
+    "dates": "2014 - today",
+    "tags": "devops, docker, ansible"
+  }, {
+    "id": "2",
+    "tileContent": "cheminot.cer-sncf-bx.org",
+    "title": "Front-end for SNCF's employees (pro)",
+    "dates": "december 2013 - august 2014",
+    "tags": "project management, ruby-on-rails, front-end development (sass, coffeescript, slim), ops, communication",
+    "link": "http://cheminot.cer-sncf-bx.org"
+  }, {
+    "id": "3",
     "tileContent": "librarybox",
     "title": "LibraryBox",
     "dates": "december 2014 - today",
     "tags": "angularjs, gulp, associative entrepreneurship",
     "link": "https://github.com/Labx/LibraryBox-app"
   }, {
-    "id": "2",
-    "tileContent": "cheminot.cer-sncf-bx.org",
-    "title": "Front-end for SNCF's employees",
-    "dates": "december 2013 - august 2014",
-    "tags": "project management, ruby-on-rails, front-end development (sass, coffeescript, slim), system administration, communication",
-    "link": "http://cheminot.cer-sncf-bx.org"
-  }, {
-    "id": "3",
+    "id": "4",
     "tileContent": "carrotmob",
     "title": "CarrotMob France",
     "dates": "june 2014 - september 2014",
     "tags": "nodejs stack (sailsjs, grunt, bower), associative entrepreneurship"
   }, {
-    "id": "4",
+    "id": "5",
+    "tileContent": "dice of life @ govhack",
+    "title": "Loaded Dice Of Life",
+    "dates": "july 2015",
+    "tags": "game development, opendata",
+    "link": "https://github.com/LoadedDiceOfLife"
+  }, {
+    "id": "6",
     "tileContent": "wheredrop",
     "title": "Wheredrop",
     "dates": "april - june 2013",
     "tags": "angularjs, entrepreneurship"
   }, {
-    "id": "5",
+    "id": "7",
     "tileContent": "bemydiary @ bemyapp",
     "title": "BeMyDiary",
     "dates": "november 2012 - march 2013",
-    "tags": "project management, communication, entrepreneurship"
+    "tags": "project management, communication, entrepreneurship, opendata"
   }, {
-    "id": "6",
+    "id": "8",
     "tileContent": "la console @ swto",
     "title": "Startup Weekend Toulouse",
     "dates": "march 2013",
     "tags": "project management, communication, marketing, entrepreneurship"
   }, {
-    "id": "7",
+    "id": "9",
     "tileContent": "cooking @ imaginecup",
     "title": "CooKing",
     "dates": "december 2010 - may 2011",
-    "tags":  "project management, game development"
+    "tags": "project management, game development"
   }, {
-    "id": "8",
+    "id": "10",
     "tileContent": "humanutty @ imaginecup",
     "title": "HumaNutty",
-    "dates":"december 2012 - may 2013",
+    "dates": "december 2012 - may 2013",
     "tags": "project management, game development, communication"
-  }
-]
+  }]
 }
