@@ -29,20 +29,8 @@ a:hover {
   font-style  : italic;
 }
 
-.social {
-}
-
 .social-icon {
   margin-right : 20px;
-}
-
-.myTextarea {
-  height : 11.5em;
-}
-
-.photoImg {
-  max-width : 150px;
-  height    : auto;
 }
 
 .center {
@@ -120,9 +108,4 @@ a:hover {
 
 .fa-close:hover {
   background-color : #dedede;
-}
-
-.blog_link {
-  line-height : 1.5em;
-  font-size   : 1.1em;
 }
