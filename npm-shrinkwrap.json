@@ -287,6 +287,11 @@
         }
       }
     },
+    "buffer-shims": {
+      "version": "1.0.0",
+      "from": "buffer-shims@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/buffer-shims/-/buffer-shims-1.0.0.tgz"
+    },
     "buffer-xor": {
       "version": "1.0.3",
       "from": "buffer-xor@>=1.0.2 <2.0.0",
@@ -520,6 +525,11 @@
       "from": "domain-browser@>=1.1.0 <1.2.0",
       "resolved": "https://registry.npmjs.org/domain-browser/-/domain-browser-1.1.7.tgz"
     },
+    "duplexer2": {
+      "version": "0.1.4",
+      "from": "duplexer2@>=0.1.2 <0.2.0",
+      "resolved": "https://registry.npmjs.org/duplexer2/-/duplexer2-0.1.4.tgz"
+    },
     "ee-first": {
       "version": "1.1.1",
       "from": "ee-first@1.1.1",
@@ -631,21 +641,9 @@
       "resolved": "https://registry.npmjs.org/fresh/-/fresh-0.3.0.tgz"
     },
     "fs-readfile-promise": {
-      "version": "1.1.0",
-      "from": "fs-readfile-promise@1.1.0",
-      "resolved": "https://registry.npmjs.org/fs-readfile-promise/-/fs-readfile-promise-1.1.0.tgz",
-      "dependencies": {
-        "es6-promise": {
-          "version": "2.3.0",
-          "from": "es6-promise@2.3.0",
-          "resolved": "https://registry.npmjs.org/es6-promise/-/es6-promise-2.3.0.tgz"
-        },
-        "graceful-fs": {
-          "version": "3.0.8",
-          "from": "graceful-fs@3.0.8",
-          "resolved": "https://registry.npmjs.org/graceful-fs/-/graceful-fs-3.0.8.tgz"
-        }
-      }
+      "version": "3.0.0",
+      "from": "fs-readfile-promise@>=3.0.0 <4.0.0",
+      "resolved": "https://registry.npmjs.org/fs-readfile-promise/-/fs-readfile-promise-3.0.0.tgz"
     },
     "function-bind": {
       "version": "1.1.0",
@@ -1280,6 +1278,18 @@
           "version": "2.1.0",
           "from": "readable-stream@>=2.0.2 <3.0.0",
           "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-2.1.0.tgz"
+        }
+      }
+    },
+    "readable-stream": {
+      "version": "2.1.5",
+      "from": "readable-stream@>=2.0.2 <3.0.0",
+      "resolved": "https://registry.npmjs.org/readable-stream/-/readable-stream-2.1.5.tgz",
+      "dependencies": {
+        "isarray": {
+          "version": "1.0.0",
+          "from": "isarray@~1.0.0",
+          "resolved": "https://registry.npmjs.org/isarray/-/isarray-1.0.0.tgz"
         }
       }
     },
