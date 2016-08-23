@@ -2,13 +2,13 @@ extends layout
 
 block content
 
-  .row#projectDescription
+  .row#project-description
     .col-md-12
-      .projectDescription.lightGreen
-        h1#projectTitle
-        h3#projectDates(style='position: absolute; top: 18px; right: 55px;')
-        h4#projectTags
-        h3#projectLink
+      .project-description.lightGreen
+        h1#project-title
+        h3#project-dates(style='position: absolute; top: 18px; right: 55px;')
+        h4#project-tags
+        h3#project-link
 
         i.fa.fa-close.fa-2x(onClick='closeProjectDesc(this);' style='position: absolute; top: 10px; right: 23px;')
 
@@ -16,4 +16,4 @@ block content
     each project, key in projects
       .col-md-4
         - var color = (key%2==0)? 'green' : 'lightGreen'
-        button(onClick='showProjetDesc(this.id);', class=color, id=project.id).tileProject= project.tileContent
+        button(onClick='showProjetDesc(this.id);', class=color, id=project.id).tile-project= project.tileContent

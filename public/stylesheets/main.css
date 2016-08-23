@@ -41,7 +41,7 @@ a:hover {
   text-align : right;
 }
 
-.bottomRow {
+.bottom-row {
   margin-top : 25px;
 }
 
@@ -55,7 +55,7 @@ a:hover {
 }
 
 .name-line {
-    text-align  : right;
+  text-align  : right;
 }
 
 .tile {
@@ -68,27 +68,25 @@ a:hover {
   border : 1px solid grey;
 }
 
-.tileProject {
+.tile-project {
   width         : 100%;
   font-size     : 2em;
   padding       : 1.3em 0em;
   margin-bottom : 25px;
 }
 
-.tileProject:hover {
+.tile-project:hover {
   border : 1px solid grey;
 }
 
 
-.tileDescription {
+.tile-description {
   width : 100%;
 }
-
 
 .hidden {
   display : none;
 }
-
 
 .message {
   text-align  : center;
@@ -97,11 +95,11 @@ a:hover {
   padding     : 10px 20px;
 }
 
-#projectDescription {
+#project-description {
   display : none;
 }
 
-.projectDescription {
+.project-description {
   padding       : 10px;
   margin-bottom : 25px;
 }

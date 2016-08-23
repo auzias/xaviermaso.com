@@ -7,28 +7,28 @@ window.showProjetDesc = function (projectId) {
     '/projects/' + projectId,
     function (project) {
       // print top tile
-      $('#projectDescription').show()
-      $('.topRow').removeClass('topRow').addClass('bottomRow')
-      $('#projectDescription').addClass('topRow')
+      $('#project-description').show()
+      $('.top-row').removeClass('top-row').addClass('bottom-row')
+      $('#project-description').addClass('top-row')
 
       // add content
-      $('#projectTitle').html(project.title)
-      $('#projectDates').html(project.dates)
-      $('#projectTags').html(project.tags)
+      $('#project-title').html(project.title)
+      $('#project-dates').html(project.dates)
+      $('#project-tags').html(project.tags)
 
       // link management
       if (typeof project.link === 'undefined') {
-        $('#projectLink').hide()
+        $('#project-link').hide()
       } else {
-        $('#projectLink').show()
-        $('#projectLink').html('<a href=\'' + project.link + '\' target=\'blank_\'>' + project.link + '</a>')
+        $('#project-link').show()
+        $('#project-link').html('<a href=\'' + project.link + '\' target=\'blank_\'>' + project.link + '</a>')
       }
     }
   )
 }
 
 window.closeProjectDesc = function (element) {
-  $('#projectDescription').hide()
-  $('#projectDescription').removeClass('topRow')
-  $($('.bottomRow')[0]).removeClass('bottomRow').addClass('topRow')
+  $('#project-description').hide()
+  $('#project-description').removeClass('top-row')
+  $($('.bottom-row')[0]).removeClass('bottom-row').addClass('top-row')
 }
