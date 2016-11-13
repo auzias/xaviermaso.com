@@ -2,4 +2,4 @@ FROM node:6-onbuild
 
 RUN npm run build
 
-EXPOSE 80
+EXPOSE 8000

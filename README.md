@@ -24,6 +24,6 @@ npm run build
 docker run \
   --name xaviermaso.com \
   -e NODE_ENV=production \
-  -p 8080:80 \
+  -p 8080:8000 \
   pamplemousse/xaviermaso.com
 ```
