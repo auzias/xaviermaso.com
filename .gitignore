@@ -4,3 +4,6 @@ node_modules
 public/fonts/
 public/javascripts/bundle*.js
 public/stylesheets/bundle*.css
+
+app/node_modules
+app/elm-stuff
