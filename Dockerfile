@@ -24,6 +24,4 @@ RUN npm run build
 
 EXPOSE 8000
 
-USER node
-
 CMD ["npm", "start"]
