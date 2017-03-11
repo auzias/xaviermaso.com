@@ -3,15 +3,20 @@ module Main exposing (..)
 import Commands exposing (fetchProjects)
 import Messages exposing (Msg)
 import Models exposing (Model, initialModel)
+import Routing
 import Update exposing (update)
 import View exposing (view)
 
-import Html exposing (Html)
+import Navigation exposing (Location)
 
 
-initialState : ( Model, Cmd Msg )
-initialState =
-    ( initialModel, fetchProjects )
+initialState : Location -> ( Model, Cmd Msg )
+initialState location =
+    let
+        currentRoute =
+            Routing.parseLocation location
+    in
+        ( initialModel currentRoute, fetchProjects )
 
 
 subscriptions : Model -> Sub Msg
@@ -22,7 +27,7 @@ subscriptions model =
 -- MAIN
 main : Program Never Model Msg
 main =
-    Html.program
+    Navigation.program Messages.OnLocationChange
         { init = initialState
         , view = view
         , update = update

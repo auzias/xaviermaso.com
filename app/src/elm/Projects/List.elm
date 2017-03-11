@@ -11,8 +11,7 @@ import RemoteData exposing (WebData)
 view : WebData (List Project) -> Html Msg
 view response =
     div []
-        [ nav
-        , maybeList response
+        [ maybeList response
         ]
 
 
@@ -30,11 +29,6 @@ maybeList response =
 
         RemoteData.Failure error ->
             text (toString error)
-
-nav : Html Msg
-nav =
-    div [ class "clearfix mb2 white bg-black" ]
-        [ div [ class "left p2" ] [ text "Projects" ] ]
 
 
 list : List Project -> Html Msg
