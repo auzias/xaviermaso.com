@@ -1,16 +1,16 @@
 module Main exposing (..)
 
-import Messages exposing (..)
-import Models exposing (..)
-import Update exposing (..)
-import View exposing (..)
+import Messages exposing (Msg)
+import Models exposing (Model, initialModel)
+import Update exposing (update)
+import View exposing (view)
 
 import Html exposing (Html)
 
 
 initialState : ( Model, Cmd Msg )
 initialState =
-    ( "Hello", Cmd.none )
+    ( initialModel, Cmd.none )
 
 
 subscriptions : Model -> Sub Msg
