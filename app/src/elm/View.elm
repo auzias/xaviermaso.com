@@ -3,9 +3,9 @@ module View exposing(..)
 import Messages exposing (..)
 import Models exposing (Model, ProjectId)
 import Projects.List exposing (..)
-import Routing exposing (projectsPath)
+import Routing exposing (projectsPath, cvPath)
 
-import Html exposing (Html, button, div, text)
+import Html exposing (Html, a, br, button, div, object, text)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 
@@ -15,6 +15,8 @@ view model =
     case model.route of
         Models.MainRoute ->
             mainView
+        Models.CVRoute ->
+            cvView
         Models.ProjectsRoute ->
             projectsView model
         Models.NotFoundRoute ->
@@ -33,11 +35,34 @@ projectsView model =
     Projects.List.view model.projects
 
 
+cvView : Html Msg
+cvView =
+  div [ class "row" ] [
+    object [
+      class "col-md-12"
+    , attribute "type" "application/pdf"
+    , attribute "data" "documents/xaviermaso.pdf"
+    , style [ ("height", "80em") ]
+    ] [
+      div [ class "message lightOrange" ] [
+        br [][]
+      , div [] [ text "Oops !" ]
+      , br [][]
+      , br [][]
+      , div [] [ text "The necessary plug-in seems to be missing." ]
+      , br [][]
+      , br [][]
+      , a [ href "/documents/xaviermaso.pdf" ] [ text "Download the CV in PDF format." ]
+      ]
+    ]
+  ]
+
+
 mainView : Html Msg
 mainView =
     div [ class "row" ]
     [ div [ class "col-md-6" ][
         button [ class "tile green", onClick (NavigateTo projectsPath) ][ text "Projects" ] ]
     , div [ class "col-md-6" ][
-        button [ class "tile orange" ][ text "cv" ] ]
+        button [ class "tile orange", onClick (NavigateTo cvPath) ][ text "cv" ] ]
     ]

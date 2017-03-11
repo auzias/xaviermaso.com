@@ -11,6 +11,7 @@ type alias Model =
 
 type Route
     = MainRoute
+    | CVRoute
     | ProjectsRoute
     | NotFoundRoute
 

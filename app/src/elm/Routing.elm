@@ -11,6 +11,7 @@ matchers =
     oneOf
         [ map MainRoute top
         , map ProjectsRoute (s "projects")
+        , map CVRoute (s "cv")
         ]
 
 
@@ -26,3 +27,8 @@ parseLocation location =
 projectsPath : String
 projectsPath =
     "#projects"
+
+
+cvPath : String
+cvPath =
+    "#cv"
