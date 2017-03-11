@@ -7,5 +7,5 @@ import Models exposing (..)
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
     case msg of
-        NoOp ->
-            ( model, Cmd.none )
+        Messages.OnFetchProjects response ->
+            ( { model | projects = response }, Cmd.none )

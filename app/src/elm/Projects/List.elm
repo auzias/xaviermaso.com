@@ -5,15 +5,31 @@ import Models exposing (Project)
 
 import Html exposing (..)
 import Html.Attributes exposing (class, href)
+import RemoteData exposing (WebData)
 
 
-view : List Project -> Html Msg
-view projects =
+view : WebData (List Project) -> Html Msg
+view response =
     div []
         [ nav
-        , list projects
+        , maybeList response
         ]
 
+
+maybeList : WebData (List Project) -> Html Msg
+maybeList response =
+    case response of
+        RemoteData.NotAsked ->
+            text ""
+
+        RemoteData.Loading ->
+            text "Loading..."
+
+        RemoteData.Success projects ->
+            list projects
+
+        RemoteData.Failure error ->
+            text (toString error)
 
 nav : Html Msg
 nav =
