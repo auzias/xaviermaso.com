@@ -1,8 +1,8 @@
 module Main exposing (..)
 
-import Commands exposing (fetchProjects)
 import Messages exposing (Msg)
 import Models exposing (Model, initialModel)
+import Projects.Commands exposing (fetchProjects)
 import Routing
 import Update exposing (update)
 import View exposing (view)

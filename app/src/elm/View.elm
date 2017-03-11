@@ -1,7 +1,8 @@
 module View exposing(..)
 
 import Messages exposing (..)
-import Models exposing (Model, ProjectId)
+import Models exposing (Model)
+import Projects.Models exposing (ProjectId)
 import Projects.List exposing (..)
 import Routing exposing (projectsPath, cvPath)
 

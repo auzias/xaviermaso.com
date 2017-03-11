@@ -1,5 +1,7 @@
 module Models exposing (..)
 
+import Projects.Models exposing (..)
+
 import RemoteData exposing (WebData)
 
 
@@ -20,18 +22,4 @@ initialModel : Route -> Model
 initialModel route =
     { projects = RemoteData.Loading
     , route = route
-    }
-
-
-type alias ProjectId =
-    String
-
-
-type alias Project =
-    { id : ProjectId
-    , tileContent : String
-    , title : String
-    , dates : String
-    , tags : String
-    , link : Maybe String
     }

@@ -1,7 +1,7 @@
 module Projects.List exposing (..)
 
 import Messages exposing (Msg)
-import Models exposing (Project)
+import Projects.Models exposing (Project)
 
 import Html exposing (..)
 import Html.Attributes exposing (class, href)

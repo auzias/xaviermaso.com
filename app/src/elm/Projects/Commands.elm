@@ -1,7 +1,7 @@
-module Commands exposing (..)
+module Projects.Commands exposing (..)
 
 import Messages exposing (Msg)
-import Models exposing (ProjectId, Project)
+import Projects.Models exposing (ProjectId, Project)
 
 import Http
 import Json.Decode as Decode
