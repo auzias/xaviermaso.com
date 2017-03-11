@@ -21,3 +21,8 @@ parseLocation location =
             route
         Nothing ->
             NotFoundRoute
+
+
+projectsPath : String
+projectsPath =
+    "#projects"

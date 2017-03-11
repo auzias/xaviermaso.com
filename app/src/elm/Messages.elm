@@ -9,3 +9,4 @@ import RemoteData exposing (WebData)
 type Msg
     = OnFetchProjects (WebData (List Project))
     | OnLocationChange Location
+    | NavigateTo String

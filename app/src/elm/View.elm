@@ -3,9 +3,11 @@ module View exposing(..)
 import Messages exposing (..)
 import Models exposing (Model, ProjectId)
 import Projects.List exposing (..)
+import Routing exposing (projectsPath)
 
 import Html exposing (Html, button, div, text)
 import Html.Attributes exposing (..)
+import Html.Events exposing (onClick)
 
 
 view : Model -> Html Msg
@@ -35,7 +37,7 @@ mainView : Html Msg
 mainView =
     div [ class "row" ]
     [ div [ class "col-md-6" ][
-        button [ class "tile green" ][ text "Projects" ] ]
+        button [ class "tile green", onClick (NavigateTo projectsPath) ][ text "Projects" ] ]
     , div [ class "col-md-6" ][
         button [ class "tile orange" ][ text "cv" ] ]
     ]

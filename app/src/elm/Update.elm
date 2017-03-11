@@ -4,6 +4,8 @@ import Messages exposing (..)
 import Models exposing (..)
 import Routing exposing (parseLocation)
 
+import Navigation exposing (newUrl)
+
 
 update : Msg -> Model -> ( Model, Cmd Msg )
 update msg model =
@@ -17,3 +19,10 @@ update msg model =
                     parseLocation location
             in
                 ( { model | route = newRoute }, Cmd.none )
+
+        NavigateTo path ->
+            let
+                command =
+                    Navigation.newUrl path
+            in
+                ( model, command )
