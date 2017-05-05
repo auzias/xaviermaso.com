@@ -26,3 +26,9 @@ update msg model =
                     Navigation.newUrl path
             in
                 ( model, command )
+
+        ShowDescriptionOf projectId ->
+            ( { model | currentProject = (Just projectId) }, Cmd.none )
+
+        CloseProjectDescription ->
+            ( { model | currentProject = Nothing }, Cmd.none )

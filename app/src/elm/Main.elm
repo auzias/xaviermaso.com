@@ -9,7 +9,6 @@ import View exposing (view)
 
 import Navigation exposing (Location)
 
-
 initialState : Location -> ( Model, Cmd Msg )
 initialState location =
     let

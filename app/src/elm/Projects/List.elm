@@ -1,10 +1,12 @@
 module Projects.List exposing (..)
 
-import Messages exposing (Msg)
+import Messages exposing (..)
 import Projects.Models exposing (Project)
+import Projects.Show exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (class, href)
+import Html.Events exposing (onClick)
 import RemoteData exposing (WebData)
 
 
@@ -43,6 +45,6 @@ projectTile index project =
         color =
             if (index % 2 == 0) then "green" else "lightGreen"
     in
-        div [ class "col-md-4" ] [
+        div [ class "col-md-4", onClick (ShowDescriptionOf project.id) ] [
             button [ class ("tile-project " ++ color) ] [ text project.tileContent ]
             ]

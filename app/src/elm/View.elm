@@ -2,8 +2,9 @@ module View exposing(..)
 
 import Messages exposing (..)
 import Models exposing (Model)
-import Projects.Models exposing (ProjectId)
+import Projects.Models exposing (Project, ProjectId)
 import Projects.List exposing (..)
+import Projects.Show exposing (..)
 import Routing exposing (projectsPath, cvPath)
 
 import Html exposing (Html, a, br, button, div, object, text)
@@ -33,7 +34,10 @@ notFoundView =
 
 projectsView : Model -> Html Msg
 projectsView model =
-    Projects.List.view model.projects
+    div []
+    [ Projects.Show.view model
+    , Projects.List.view model.projects
+    ]
 
 
 cvView : Html Msg
