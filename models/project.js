@@ -15,20 +15,7 @@ module.exports = (function () {
     }, onRejected)
   }
 
-  var find = function (id) {
-    return all().then(function (data) {
-      var returnedProject
-      data.forEach(function (project) {
-        if (project.id === id) {
-          returnedProject = project
-        }
-      })
-      return returnedProject
-    }, onRejected)
-  }
-
   return {
-    all: all,
-    find: find
+    all: all
   }
 })()
