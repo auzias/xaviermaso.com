@@ -40,7 +40,7 @@ var commonConfig = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'src/static/index.pug',
+      template: 'front/static/index.pug',
       inject: 'body',
       filename: 'index.html'
     })
@@ -58,7 +58,7 @@ if ( TARGET_ENV === 'development' ) {
 
     entry: [
       'webpack-dev-server/client?http://localhost:8080',
-      path.join( __dirname, 'src/static/index.js' )
+      path.join( __dirname, 'front/static/index.js' )
     ],
 
     devServer: {
@@ -94,7 +94,7 @@ if ( TARGET_ENV === 'production' ) {
 
   module.exports = merge( commonConfig, {
 
-    entry: path.join( __dirname, 'src/static/index.js' ),
+    entry: path.join( __dirname, 'front/static/index.js' ),
 
     module: {
       loaders: [
@@ -117,11 +117,11 @@ if ( TARGET_ENV === 'production' ) {
     plugins: [
       new CopyWebpackPlugin([
         {
-          from: 'src/static/img/',
+          from: 'front/static/img/',
           to:   'static/img/'
         },
         {
-          from: 'src/static/img/favicon.ico'
+          from: 'front/static/img/favicon.ico'
         },
       ]),
 
