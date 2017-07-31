@@ -2,7 +2,7 @@
 
 // Yes, the db is currently a json file...
 var readFile = require('fs-readfile-promise')
-var projects = readFile('models/db.json', 'utf8')
+var projects = readFile('back/models/db.json', 'utf8')
 
 var onRejected = function (err) {
   console.log(err)
