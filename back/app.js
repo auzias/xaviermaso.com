@@ -3,6 +3,7 @@
 var express = require('express')
 var path = require('path')
 var logger = require('morgan')
+var cors = require('cors')
 
 var app = express()
 
@@ -14,6 +15,11 @@ app.use(logger('dev'))
 app.use(express.static(path.join(__dirname, '../dist')))
 
 // app.set('view engine', 'html');
+
+// allow access control from different origin in non production mode
+if (process.env.NODE_ENV !== 'production') {
+  app.use(cors())
+}
 
 app.use('/', require('./routes/index'))
 app.use('/projects', require('./routes/projects'))
