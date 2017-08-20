@@ -13,7 +13,6 @@ var TARGET_ENV = process.env.npm_lifecycle_event === 'build' ? 'production' : 'd
 
 // common webpack config
 var commonConfig = {
-
   output: {
     path: path.resolve(__dirname, 'dist/'),
     filename: '[hash].js'
@@ -60,7 +59,7 @@ if (TARGET_ENV === 'development') {
     ],
 
     devServer: {
-      contentBase: 'front/',
+      contentBase: ['front/static/', 'front/static/documents/'],
       hot: true,
       host: '127.0.0.1',
       inline: true,
@@ -124,6 +123,10 @@ if (TARGET_ENV === 'production') {
         {
           from: 'front/static/img/',
           to: 'static/img/'
+        },
+        {
+          from: 'front/static/documents/xaviermaso.pdf',
+          to: 'xaviermaso.pdf'
         },
         {
           from: 'front/static/img/favicon.ico'

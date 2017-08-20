@@ -46,7 +46,7 @@ cvView =
     object [
       class "col-md-12"
     , attribute "type" "application/pdf"
-    , attribute "data" "documents/xaviermaso.pdf"
+    , attribute "data" "xaviermaso.pdf"
     , style [ ("height", "80em") ]
     ] [
       div [ class "message lightOrange" ] [
@@ -57,7 +57,7 @@ cvView =
       , div [] [ text "The necessary plug-in seems to be missing." ]
       , br [][]
       , br [][]
-      , a [ href "/documents/xaviermaso.pdf" ] [ text "Download the CV in PDF format." ]
+      , a [ href "xaviermaso.pdf" ] [ text "Download the CV in PDF format." ]
       ]
     ]
   ]
@@ -69,5 +69,5 @@ mainView =
     [ div [ class "col-md-6" ][
         button [ class "tile green", onClick (NavigateTo projectsPath) ][ text "Projects" ] ]
     , div [ class "col-md-6" ][
-        button [ class "tile orange", onClick (NavigateTo cvPath) ][ text "cv" ] ]
+        button [ class "tile orange", onClick (NavigateTo cvPath) ][ text "CV" ] ]
     ]
