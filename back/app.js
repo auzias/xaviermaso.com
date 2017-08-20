@@ -14,8 +14,6 @@ var server = app.listen(8000, function () {
 app.use(logger('dev'))
 app.use(express.static(path.join(__dirname, '../dist')))
 
-// app.set('view engine', 'html');
-
 // allow access control from different origin in non production mode
 if (process.env.NODE_ENV !== 'production') {
   app.use(cors())

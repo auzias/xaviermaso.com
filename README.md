@@ -2,22 +2,34 @@
 
   ![](https://travis-ci.org/Pamplemousse/xaviermaso.com.svg?branch=master)
 
-  * powered by [expressjs](http://expressjs.com/)
+  * powered by [expressjs](http://expressjs.com/) and [elm](http://elm-lang.org/)
   * running live at [xaviermaso.com](http://xaviermaso.com/)
 
 ## development
 
 ```bash
-# automatically bundle js and css on change
-npm run watch
-```
+# install dependencies
+yarn install
+elm make
 
-## bundle the assets
+# run the app in dev mode
+npm run dev
 
-```bash
-# bundle and minify css, js and fonts
+# build the front
 npm run build
 ```
+
+*Note: [this docker image](https://hub.docker.com/r/pamplemousse/nodejs/) should contain all the tools to run and build the app.*
+
+```bash
+docker run --rm -it \
+    -v $(pwd):/app -w /app \
+    -u 1000:1000 \
+    --net host -p 8000:8000 -p 8080:8080
+    pamplemousse/node
+    ...
+```
+
 
 ## run the app
 ```bash

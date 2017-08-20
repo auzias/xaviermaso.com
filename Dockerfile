@@ -11,9 +11,11 @@ ONBUILD ENV NODE_ENV $NODE_ENV
 COPY package.json /usr/src/app/
 COPY yarn.lock /usr/src/app/
 
-RUN yarn install
-COPY . /usr/src/app
+RUN yarn install --production
+
+COPY back /usr/src/app/back
+COPY dist /usr/src/app/dist
 
 EXPOSE 8000
 
-CMD ["npm", "start"]
+CMD ["npm", "run", "start-back"]

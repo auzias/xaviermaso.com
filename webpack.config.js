@@ -57,12 +57,15 @@ if ( TARGET_ENV === 'development' ) {
   module.exports = merge( commonConfig, {
 
     entry: [
-      'webpack-dev-server/client?http://localhost:8080',
       path.join( __dirname, 'front/static/index.js' )
     ],
 
     devServer: {
+      contentBase: 'front/',
+      hot: true,
+      host: '127.0.0.1',
       inline:   true,
+      port: 8080,
       progress: true
     },
 
@@ -83,8 +86,11 @@ if ( TARGET_ENV === 'development' ) {
           ]
         }
       ]
-    }
+    },
 
+    plugins: [
+      new webpack.HotModuleReplacementPlugin()
+    ]
   });
 }
 
