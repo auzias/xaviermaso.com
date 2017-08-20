@@ -18,7 +18,9 @@ fetchProjects =
 
 fetchProjectsUrl : String
 fetchProjectsUrl =
-    "http://localhost:8000/projects"
+    -- TODO: in dev:
+    -- "http://localhost:8000/projects"
+    "http://xaviermaso.com/projects"
 
 
 projectsDecoder : Decode.Decoder (List Project)
