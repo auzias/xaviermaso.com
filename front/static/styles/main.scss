@@ -1,7 +1,13 @@
-@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css"
-@import "../../node_modules/font-awesome/css/font-awesome.min.css"
+$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+@import '~bootstrap-sass/assets/stylesheets/bootstrap/_mixins.scss';
+@import '~bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
-@import "colors.css"
+$fa-font-path: "~font-awesome/fonts";
+@import "~font-awesome/scss/font-awesome.scss";
+
+// can add Boostrap overrides, additional Sass/CSS below...
+
+@import './colors.scss';
 
 html, body, button {
   background-color : #F9F9F9;

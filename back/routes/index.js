@@ -5,7 +5,11 @@ var router = express.Router()
 
 /* GET home page. */
 router.get('/', function (req, res) {
-  res.render('index', { title: 'Xavier Maso | Home', section: 'Home' })
+  if (process.env.NODE_ENV === 'production') {
+    res.sendFile('index.html')
+  } else {
+    res.redirect('http://localhost:8080/')
+  }
 })
 
 module.exports = router

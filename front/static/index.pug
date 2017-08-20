@@ -1,11 +1,7 @@
 doctype html
 html
   head
-    title= title
-    if (process.env.NODE_ENV == 'production')
-      link(rel='stylesheet', href='/stylesheets/bundle.min.css')
-    else
-      link(rel='stylesheet', href='/stylesheets/bundle.css')
+    title= 'Xavier Maso'
     link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto:400,100,300')
 
   body
@@ -26,19 +22,9 @@ html
             a(href='https://www.linkedin.com/pub/xavier-maso/39/4a/96b', target='_blank')
               i.fa.fa-linkedin(alt="Linkedin image link for Xavier Maso's linkedin profile").social-icon
 
-        .col-md-4.section
-          .row
-            = section
-
-      block content
+      #main
 
       .row.footer
         .col-md-2.col-md-offset-10
           .section
             h6 Such reserved rights.
-
-
-  if (process.env.NODE_ENV == 'production')
-    script(type='text/javascript' , src='/javascripts/bundle.min.js')
-  else
-    script(type='text/javascript' , src='/javascripts/bundle.js')
