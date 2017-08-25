@@ -5,7 +5,7 @@
     "title": "RedShield (pro)",
     "dates": "january 2015 - april 2016",
     "tags": "ruby-on-rails, front-end development, devops, R&D",
-    "links": "https://www.redshield.co/"
+    "link": "https://www.redshield.co/"
   }, {
     "id": "1",
     "tileContent": "personnal stack",
@@ -69,5 +69,12 @@
     "title": "HumaNutty",
     "dates": "december 2012 - may 2013",
     "tags": "project management, game development, communication"
+  }, {
+    "id": "11",
+    "tileContent": "xaviermaso.com",
+    "title": "xaviermaso.com",
+    "dates": "2014 - today",
+    "tags": "nodejs, elm, front-end development, devops",
+    "link": "http://xaviermaso.com"
   }]
 }
