@@ -3,9 +3,20 @@ language: node_js
 node_js:
     - "6"
 
+services:
+    - docker
+
 before_install:
-  - npm install -g standard nsp
+  - npm install -g standard nsp elm@0.18
 
 script:
   - standard
   - nsp check
+  - npm run build
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker build -t pamplemousse/xaviermaso.com .;
+    docker push pamplemousse/xaviermaso.com;
+    fi
