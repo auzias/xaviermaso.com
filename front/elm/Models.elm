@@ -12,6 +12,10 @@ type alias Model =
     }
 
 
+type alias Flags =
+    { projectsUrl : ProjectsUrl }
+
+
 type Route
     = MainRoute
     | CVRoute

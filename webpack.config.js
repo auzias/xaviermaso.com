@@ -42,7 +42,8 @@ var commonConfig = {
       template: 'front/static/index.pug',
       inject: 'body',
       filename: 'index.html'
-    })
+    }),
+    new webpack.EnvironmentPlugin(['NODE_ENV'])
   ],
 
   postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ]

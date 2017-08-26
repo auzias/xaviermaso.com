@@ -1,7 +1,7 @@
 module Projects.Commands exposing (..)
 
 import Messages exposing (Msg)
-import Projects.Models exposing (ProjectId, Project)
+import Projects.Models exposing (ProjectId, ProjectsUrl, Project)
 
 import Http
 import Json.Decode as Decode
@@ -9,18 +9,11 @@ import Json.Decode.Pipeline exposing (decode, optional, required)
 import RemoteData
 
 
-fetchProjects : Cmd Msg
-fetchProjects =
-    Http.get fetchProjectsUrl projectsDecoder
+fetchProjects : ProjectsUrl -> Cmd Msg
+fetchProjects url =
+    Http.get url projectsDecoder
         |> RemoteData.sendRequest
         |> Cmd.map Messages.OnFetchProjects
-
-
-fetchProjectsUrl : String
-fetchProjectsUrl =
-    -- TODO: in dev:
-    -- "http://localhost:8000/projects"
-    "http://xaviermaso.com/projects"
 
 
 projectsDecoder : Decode.Decoder (List Project)

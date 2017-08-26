@@ -5,6 +5,10 @@ type alias ProjectId =
     String
 
 
+type alias ProjectsUrl =
+    String
+
+
 type alias Project =
     { id : ProjectId
     , tileContent : String
