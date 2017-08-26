@@ -15,8 +15,14 @@ script:
     - npm run build
 
 after_success:
+    - export REPO=pamplemousse/xaviermaso.com
     - if [ "$TRAVIS_BRANCH" == "master" ]; then
         docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-        docker build -t pamplemousse/xaviermaso.com .;
-        docker push pamplemousse/xaviermaso.com;
+        docker build -t $REPO .;
+        docker push $REPO;
+      fi
+    - if [ -n "$TRAVIS_TAG" ]; then
+        docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+        docker build -t $REPO:$TRAVIS_TAG .;
+        docker push $REPO:$TRAVIS_TAG;
       fi
