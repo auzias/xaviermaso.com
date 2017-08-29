@@ -27,7 +27,7 @@ projectDecoder =
         |> required "id" Decode.string
         |> required "tileContent" Decode.string
         |> required "title" Decode.string
+        |> optional "seriousness" (Decode.map Just Decode.string) Nothing
         |> required "dates" Decode.string
         |> required "tags" Decode.string
         |> optional "link" (Decode.map Just Decode.string) Nothing
-        --|> required "link" (Decode.nullable Decode.string)

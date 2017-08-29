@@ -30,7 +30,7 @@ view project =
                         , style [ ("position", "absolute")
                                 , ("top", "10px")
                                 , ("right", "23px") ]
-                        , onClick CloseProjectDescription ] []
+                        , onClick (CloseProjectDescription project) ] []
                     ]
                 ]
             ]

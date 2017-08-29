@@ -23,6 +23,7 @@
     "id": "3",
     "tileContent": "librarybox",
     "title": "LibraryBox",
+    "seriousness": "hack",
     "dates": "december 2014 - march 2015",
     "tags": "angularjs, gulp, associative entrepreneurship",
     "link": "https://github.com/Labx/LibraryBox-app"
@@ -30,12 +31,14 @@
     "id": "4",
     "tileContent": "carrotmob",
     "title": "CarrotMob France",
+    "seriousness": "hack",
     "dates": "june 2014 - september 2014",
     "tags": "nodejs stack (sailsjs, grunt, bower), associative entrepreneurship"
   }, {
     "id": "5",
     "tileContent": "dice of life @ govhack",
     "title": "Loaded Dice Of Life",
+    "seriousness": "hack",
     "dates": "july 2015",
     "tags": "game development, opendata",
     "link": "https://github.com/LoadedDiceOfLife"
@@ -43,30 +46,35 @@
     "id": "6",
     "tileContent": "wheredrop",
     "title": "Wheredrop",
+    "seriousness": "hack",
     "dates": "april - june 2013",
     "tags": "angularjs, entrepreneurship"
   }, {
     "id": "7",
     "tileContent": "bemydiary @ bemyapp",
     "title": "BeMyDiary",
+    "seriousness": "hack",
     "dates": "november 2012 - march 2013",
     "tags": "project management, communication, entrepreneurship, opendata"
   }, {
     "id": "8",
     "tileContent": "la console @ swto",
     "title": "Startup Weekend Toulouse",
+    "seriousness": "hack",
     "dates": "march 2013",
     "tags": "project management, communication, marketing, entrepreneurship"
   }, {
     "id": "9",
     "tileContent": "cooking @ imaginecup",
     "title": "CooKing",
+    "seriousness": "hack",
     "dates": "december 2010 - may 2011",
     "tags": "project management, game development"
   }, {
     "id": "10",
     "tileContent": "humanutty @ imaginecup",
     "title": "HumaNutty",
+    "seriousness": "hack",
     "dates": "december 2012 - may 2013",
     "tags": "project management, game development, communication"
   }, {

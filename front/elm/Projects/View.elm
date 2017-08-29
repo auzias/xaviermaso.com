@@ -5,9 +5,11 @@ import Models exposing (Model)
 import Projects.List exposing (view)
 import Projects.Models exposing (Project)
 import Projects.Show exposing (view)
-
 import Html exposing (Html, div, text)
+import Html.Attributes exposing (class)
+import List exposing (filter)
 import RemoteData exposing (WebData)
+import Tuple exposing (first, second)
 
 
 view : Model -> Html Msg
@@ -20,10 +22,21 @@ view model =
             text "Loading..."
 
         RemoteData.Success projects ->
-            div []
-            [ currentProjectView model.currentProject
-            , Projects.List.view projects
-            ]
+            let
+                seriousProjects =
+                    filter (\project -> project.seriousness /= (Just "hack")) projects
+
+                hacks =
+                    filter (\project -> project.seriousness == (Just "hack")) projects
+            in
+                div []
+                    [ div [ class "projects-header" ] [ text "serious stuff" ]
+                    , currentProjectView (first model.currentProjects)
+                    , Projects.List.view seriousProjects
+                    , div [ class "projects-header" ] [ text "less serious stuff" ]
+                    , currentProjectView (second model.currentProjects)
+                    , Projects.List.view hacks
+                    ]
 
         RemoteData.Failure error ->
             text (toString error)
@@ -34,7 +47,8 @@ currentProjectView maybeProject =
     case maybeProject of
         Just project ->
             div []
-            [ Projects.Show.view project
-            ]
+                [ Projects.Show.view project
+                ]
+
         Nothing ->
             text ""

@@ -7,7 +7,7 @@ import RemoteData exposing (WebData)
 
 type alias Model =
     { projects : WebData (List Project)
-    , currentProject : (Maybe Project)
+    , currentProjects : ((Maybe Project), (Maybe Project))
     , route : Route
     }
 
@@ -26,6 +26,6 @@ type Route
 initialModel : Route -> Model
 initialModel route =
     { projects = RemoteData.Loading
-    , currentProject = Nothing
+    , currentProjects = (Nothing, Nothing)
     , route = route
     }
