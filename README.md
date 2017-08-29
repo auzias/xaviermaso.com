@@ -17,6 +17,9 @@ npm run dev
 
 # build the front
 npm run build
+
+# syntax checking and formatting
+npm run check
 ```
 
 *Note: [this docker image](https://hub.docker.com/r/pamplemousse/nodejs/) should contain all the tools to run and build the app.*
