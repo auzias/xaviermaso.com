@@ -1,31 +1,25 @@
 module Projects.Show exposing (..)
 
 import Messages exposing (..)
-import Models exposing (Model)
 import Projects.Models exposing (ProjectId, Project)
 
 import Html exposing (..)
-import Html.Attributes exposing (class, href, id, style, src, target)
+import Html.Attributes exposing (class, href, id, style, target)
 import Html.Events exposing (onClick)
-import List exposing (head)
 import List.Extra exposing (find)
-import RemoteData exposing (WebData)
 
 
-view : Model -> Html Msg
-view model =
-    case (model.projects, model.currentProject) of
-        (RemoteData.Success projects, Just projectId) ->
-            let
-                maybeProject =
-                    find (\project -> project.id == projectId) projects
-            in
-                case maybeProject of
-                    Nothing -> text ""
-                    Just project ->
-                        projectView project
-        _ ->
-            text ""
+view : ProjectId -> (List Project) -> Html Msg
+view projectId projects =
+     let
+         maybeProject =
+             find (\project -> project.id == projectId) projects
+     in
+         case maybeProject of
+             Just project ->
+                 projectView project
+             Nothing ->
+                 text ""
 
 
 projectView : Project -> Html Msg

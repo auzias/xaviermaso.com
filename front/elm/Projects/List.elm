@@ -2,41 +2,15 @@ module Projects.List exposing (..)
 
 import Messages exposing (..)
 import Projects.Models exposing (Project)
-import Projects.Show exposing (view)
 
 import Html exposing (..)
 import Html.Attributes exposing (class, href)
 import Html.Events exposing (onClick)
-import RemoteData exposing (WebData)
 
 
-view : WebData (List Project) -> Html Msg
-view response =
-    div []
-        [ maybeList response
-        ]
-
-
-maybeList : WebData (List Project) -> Html Msg
-maybeList response =
-    case response of
-        RemoteData.NotAsked ->
-            text ""
-
-        RemoteData.Loading ->
-            text "Loading..."
-
-        RemoteData.Success projects ->
-            list projects
-
-        RemoteData.Failure error ->
-            text (toString error)
-
-
-list : List Project -> Html Msg
-list projects =
+view : List Project -> Html Msg
+view projects =
     div [ class "row" ] (List.indexedMap projectTile projects)
-
 
 
 projectTile : Int -> Project -> Html Msg
