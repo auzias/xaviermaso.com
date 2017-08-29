@@ -11,4 +11,4 @@ type Msg
     | OnLocationChange Location
     | NavigateTo String
     | CloseProjectDescription
-    | ShowDescriptionOf String
+    | ShowDescriptionOf Project

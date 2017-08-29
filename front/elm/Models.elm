@@ -7,7 +7,7 @@ import RemoteData exposing (WebData)
 
 type alias Model =
     { projects : WebData (List Project)
-    , currentProject : (Maybe ProjectId)
+    , currentProject : (Maybe Project)
     , route : Route
     }
 

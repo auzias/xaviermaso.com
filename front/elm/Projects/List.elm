@@ -19,6 +19,6 @@ projectTile index project =
         color =
             if (index % 2 == 0) then "green" else "lightGreen"
     in
-        div [ class "col-md-4", onClick (ShowDescriptionOf project.id) ] [
+        div [ class "col-md-4", onClick (ShowDescriptionOf project) ] [
             button [ class ("tile-project " ++ color) ] [ text project.tileContent ]
             ]

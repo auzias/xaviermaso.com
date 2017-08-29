@@ -1,7 +1,6 @@
 module Routing exposing (..)
 
 import Models exposing (Route(..))
-import Projects.Models exposing (ProjectId)
 
 import Navigation exposing (Location)
 import UrlParser exposing (..)

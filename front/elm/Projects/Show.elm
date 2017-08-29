@@ -1,29 +1,15 @@
 module Projects.Show exposing (..)
 
 import Messages exposing (..)
-import Projects.Models exposing (ProjectId, Project)
+import Projects.Models exposing (Project)
 
 import Html exposing (..)
 import Html.Attributes exposing (class, href, id, style, target)
 import Html.Events exposing (onClick)
-import List.Extra exposing (find)
 
 
-view : ProjectId -> (List Project) -> Html Msg
-view projectId projects =
-     let
-         maybeProject =
-             find (\project -> project.id == projectId) projects
-     in
-         case maybeProject of
-             Just project ->
-                 projectView project
-             Nothing ->
-                 text ""
-
-
-projectView : Project -> Html Msg
-projectView project =
+view : Project -> Html Msg
+view project =
     let
         linkValue =
             case project.link of

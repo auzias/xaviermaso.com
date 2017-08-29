@@ -3,6 +3,7 @@ module Projects.View exposing (..)
 import Messages exposing (..)
 import Models exposing (Model)
 import Projects.List exposing (view)
+import Projects.Models exposing (Project)
 import Projects.Show exposing (view)
 
 import Html exposing (Html, div, text)
@@ -19,16 +20,21 @@ view model =
             text "Loading..."
 
         RemoteData.Success projects ->
-            case model.currentProject of
-                Just projectId ->
-                    div []
-                    [ Projects.Show.view projectId projects
-                    , Projects.List.view projects
-                    ]
-                Nothing ->
-                    div []
-                    [ Projects.List.view projects
-                    ]
+            div []
+            [ currentProjectView model.currentProject
+            , Projects.List.view projects
+            ]
 
         RemoteData.Failure error ->
             text (toString error)
+
+
+currentProjectView : Maybe Project -> Html Msg
+currentProjectView maybeProject =
+    case maybeProject of
+        Just project ->
+            div []
+            [ Projects.Show.view project
+            ]
+        Nothing ->
+            text ""
