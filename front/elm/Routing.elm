@@ -1,7 +1,6 @@
 module Routing exposing (..)
 
 import Models exposing (Route(..))
-
 import Navigation exposing (Location)
 import UrlParser exposing (..)
 
@@ -20,6 +19,7 @@ parseLocation location =
     case (parseHash matchers location) of
         Just route ->
             route
+
         Nothing ->
             NotFoundRoute
 

@@ -2,7 +2,6 @@ module Projects.Commands exposing (..)
 
 import Messages exposing (Msg)
 import Projects.Models exposing (ProjectId, ProjectsUrl, Project)
-
 import Http
 import Json.Decode as Decode
 import Json.Decode.Pipeline exposing (decode, optional, required)

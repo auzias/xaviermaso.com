@@ -6,8 +6,8 @@ import Projects.Commands exposing (fetchProjects)
 import Routing
 import Update exposing (update)
 import View exposing (view)
-
 import Navigation exposing (Location)
+
 
 initialState : Flags -> Location -> ( Model, Cmd Msg )
 initialState flags location =
@@ -23,7 +23,10 @@ subscriptions model =
     Sub.none
 
 
+
 -- MAIN
+
+
 main : Program Flags Model Msg
 main =
     Navigation.programWithFlags Messages.OnLocationChange

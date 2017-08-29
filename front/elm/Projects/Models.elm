@@ -13,7 +13,7 @@ type alias Project =
     { id : ProjectId
     , tileContent : String
     , title : String
-    , seriousness : (Maybe String)
+    , seriousness : Maybe String
     , dates : String
     , tags : String
     , link : Maybe String
