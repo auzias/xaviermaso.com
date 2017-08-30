@@ -11,6 +11,7 @@ matchers =
         [ map MainRoute top
         , map ProjectsRoute (s "projects")
         , map CVRoute (s "cv")
+        , map SocialMediaRoute (s "social-media")
         ]
 
 

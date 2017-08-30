@@ -4,7 +4,7 @@ import Messages exposing (..)
 import Models exposing (Model)
 import Projects.View exposing (..)
 import Routing exposing (projectsPath, cvPath)
-import Html exposing (Html, a, br, button, div, object, text)
+import Html exposing (Html, a, br, button, div, i, object, text)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 
@@ -20,6 +20,9 @@ view model =
 
         Models.ProjectsRoute ->
             projectsView model
+
+        Models.SocialMediaRoute ->
+            socialMediaView
 
         Models.NotFoundRoute ->
             notFoundView
@@ -60,6 +63,50 @@ cvView =
                 ]
             ]
         ]
+
+
+socialMediaView : Html Msg
+socialMediaView =
+    let
+        links =
+            [ ( "https://www.youtube.com/watch?v=5MC2X-LRbkE", "Millenials in the Workplace (Simon Sinek)" )
+            , ( "https://www.youtube.com/watch?v=3E7hkPZ-HTk", "Quit Social Media (Dr. Cal Newport, TEDxTysons)" )
+            , ( "https://www.theguardian.com/commentisfree/2013/sep/25/facebook-vain-tools-ideology-sharing-users", "Is Facebook sharing making us more vain? (Joe Turnbull)" )
+            ]
+
+        textlines =
+            [ "Sorry, I left Facebook in 2013."
+            , "I find social media to be too time consuming, invasive, not so useful, sometimes harmful and really addictive."
+            , "Human relations are rich and complex therefore should not be reduced to interactions through social media."
+            , "Privately held companies' business is to make money out of you, not to solve your social problems."
+            , "Therefore, if you want to connect to me (Thank you!), you can flick me an email, write me a post-card or come to say 'Hi' in person ; deep and meaningful relationships all start with a bit of effort and a leap of faith."
+            ]
+    in
+        div [ class "jumbotron" ]
+            [ div [] (List.map formatTextLine textlines)
+            , div [ class "resource-links-box" ] (List.map formatLink links)
+            ]
+
+
+formatLink : ( String, String ) -> Html Msg
+formatLink ( destination, title ) =
+    div [ class "row" ]
+        [ a
+            [ href destination
+            , target "_blank"
+            , class "resource-link"
+            ]
+            [ text title ]
+        , text " "
+        , i [ class "fa fa-link" ]
+            []
+        ]
+
+
+formatTextLine : String -> Html Msg
+formatTextLine textline =
+    div [ class "row textline" ]
+        [ text textline ]
 
 
 mainView : Html Msg

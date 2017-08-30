@@ -19,6 +19,7 @@ type Route
     = MainRoute
     | CVRoute
     | ProjectsRoute
+    | SocialMediaRoute
     | NotFoundRoute
 
 
