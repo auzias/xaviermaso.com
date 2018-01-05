@@ -29,7 +29,7 @@ docker run --rm -it \
     -v $(pwd):/app -w /app \
     -u 1000:1000 \
     --net host -p 8000:8000 -p 8080:8080 \
-    pamplemousse/node
+    pamplemousse/nodejs
     ...
 ```
 
