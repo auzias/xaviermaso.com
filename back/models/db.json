@@ -8,8 +8,8 @@
     "link": "https://www.redshield.co/"
   }, {
     "id": "1",
-    "tileContent": "personnal stack",
-    "title": "Personnal Stack",
+    "tileContent": "personal stack",
+    "title": "Personal Stack",
     "dates": "2014 - today",
     "tags": "devops, docker, ansible"
   }, {
@@ -21,6 +21,36 @@
     "link": "http://cheminot.cer-sncf-bx.org"
   }, {
     "id": "3",
+    "tileContent": "xaviermaso.com",
+    "title": "xaviermaso.com",
+    "dates": "2014 - today",
+    "tags": "nodejs, elm, front-end development, devops",
+    "link": "https://github.com/Pamplemousse/xaviermaso.com"
+  }, {
+    "id": "4",
+    "tileContent": "meuh on air",
+    "title": "MeuhOnAir",
+    "dates": "december 2017",
+    "tags": "python, development, ops",
+    "link": "https://twitter.com/meuhonair"
+  }, {
+    "id": "10",
+    "tileContent": "alfred",
+    "title": "Alfred",
+    "seriousness": "hack",
+    "dates": "december 2017",
+    "tags": "ruby, ops",
+    "link": "https://github.com/Pamplemousse/alfred"
+  }, {
+    "id": "11",
+    "tileContent": "owasp-top-ten",
+    "title": "OwaspTopTen",
+    "seriousness": "hack",
+    "dates": "december 2017",
+    "tags": "python, security, front-end development, ops",
+    "link": "https://github.com/Pamplemousse/owasp-top-10-demo"
+  }, {
+    "id": "12",
     "tileContent": "librarybox",
     "title": "LibraryBox",
     "seriousness": "hack",
@@ -28,14 +58,14 @@
     "tags": "angularjs, gulp, associative entrepreneurship",
     "link": "https://github.com/Labx/LibraryBox-app"
   }, {
-    "id": "4",
+    "id": "13",
     "tileContent": "carrotmob",
     "title": "CarrotMob France",
     "seriousness": "hack",
     "dates": "june 2014 - september 2014",
     "tags": "nodejs stack (sailsjs, grunt, bower), associative entrepreneurship"
   }, {
-    "id": "5",
+    "id": "14",
     "tileContent": "dice of life @ govhack",
     "title": "Loaded Dice Of Life",
     "seriousness": "hack",
@@ -43,46 +73,39 @@
     "tags": "game development, opendata",
     "link": "https://github.com/LoadedDiceOfLife"
   }, {
-    "id": "6",
+    "id": "15",
     "tileContent": "wheredrop",
     "title": "Wheredrop",
     "seriousness": "hack",
     "dates": "april - june 2013",
     "tags": "angularjs, entrepreneurship"
   }, {
-    "id": "7",
+    "id": "16",
     "tileContent": "bemydiary @ bemyapp",
     "title": "BeMyDiary",
     "seriousness": "hack",
     "dates": "november 2012 - march 2013",
     "tags": "project management, communication, entrepreneurship, opendata"
   }, {
-    "id": "8",
+    "id": "17",
     "tileContent": "la console @ swto",
     "title": "Startup Weekend Toulouse",
     "seriousness": "hack",
     "dates": "march 2013",
     "tags": "project management, communication, marketing, entrepreneurship"
   }, {
-    "id": "9",
+    "id": "18",
     "tileContent": "cooking @ imaginecup",
     "title": "CooKing",
     "seriousness": "hack",
     "dates": "december 2010 - may 2011",
     "tags": "project management, game development"
   }, {
-    "id": "10",
+    "id": "19",
     "tileContent": "humanutty @ imaginecup",
     "title": "HumaNutty",
     "seriousness": "hack",
     "dates": "december 2012 - may 2013",
     "tags": "project management, game development, communication"
-  }, {
-    "id": "11",
-    "tileContent": "xaviermaso.com",
-    "title": "xaviermaso.com",
-    "dates": "2014 - today",
-    "tags": "nodejs, elm, front-end development, devops",
-    "link": "http://xaviermaso.com"
   }]
 }
