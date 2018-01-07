@@ -17,4 +17,5 @@ type alias Project =
     , dates : String
     , tags : String
     , link : Maybe String
+    , description : Maybe String
     }

@@ -30,3 +30,4 @@ projectDecoder =
         |> required "dates" Decode.string
         |> required "tags" Decode.string
         |> optional "link" (Decode.map Just Decode.string) Nothing
+        |> optional "description" (Decode.map Just Decode.string) Nothing
