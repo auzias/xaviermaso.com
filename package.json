@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "export NODE_ENV=production; rimraf dist && webpack",
-    "check": "standard && elm-format --validate front/elm/**/*",
+    "check": "standard && elm-format --validate front/elm/",
     "dev": "export NODE_ENV=development; npm run start-back & npm run start-front",
     "start-back": "node back/app.js",
     "start-front": "webpack-dev-server"

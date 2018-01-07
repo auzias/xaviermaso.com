@@ -15,6 +15,7 @@ view project =
             case project.description of
                 Nothing ->
                     ""
+
                 Just description ->
                     description
 
@@ -22,6 +23,7 @@ view project =
             case project.link of
                 Nothing ->
                     ""
+
                 Just link ->
                     link
     in
@@ -39,8 +41,11 @@ view project =
                         [ text project.dates ]
                     , h4 [] [ text project.tags ]
                     , div [ class "row" ]
-                        [ div [ class "col-md-12 textDesc"
-                              , property "innerHTML" <| string descriptionValue ] []
+                        [ div
+                            [ class "col-md-12 textDesc"
+                            , property "innerHTML" <| string descriptionValue
+                            ]
+                            []
                         ]
                     , h3 []
                         [ a [ href linkValue, target "_blank" ] [ text linkValue ]
