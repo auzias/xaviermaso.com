@@ -9,8 +9,8 @@ matchers : Parser (Route -> a) a
 matchers =
     oneOf
         [ map MainRoute top
-        , map ProjectsRoute (s "projects")
         , map CVRoute (s "cv")
+        , map ProjectsRoute (s "projects")
         , map SocialMediaRoute (s "social-media")
         ]
 
