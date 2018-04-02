@@ -72,6 +72,8 @@ socialMediaView =
             [ ( "https://www.youtube.com/watch?v=5MC2X-LRbkE", "Millenials in the Workplace (Simon Sinek)" )
             , ( "https://www.youtube.com/watch?v=3E7hkPZ-HTk", "Quit Social Media (Dr. Cal Newport, TEDxTysons)" )
             , ( "https://www.theguardian.com/commentisfree/2013/sep/25/facebook-vain-tools-ideology-sharing-users", "Is Facebook sharing making us more vain? (Joe Turnbull)" )
+            , ( "https://www.nytimes.com/2018/03/17/us/politics/cambridge-analytica-trump-campaign.html", "How Trump Consultants Exploited the Facebook Data of Millions (NY Times)" )
+            , ( "https://www.bloomberg.com/news/features/2018-03-27/ad-scammers-need-suckers-and-facebook-helps-find-them", "How Facebook Helps Shady Advertisers Pollute the Internet (Bloomberg)" )
             ]
 
         textlines =
