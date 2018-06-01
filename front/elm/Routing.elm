@@ -33,3 +33,8 @@ projectsPath =
 cvPath : String
 cvPath =
     "#cv"
+
+
+blogPath : String
+blogPath =
+    "http://blog.xaviermaso.com"

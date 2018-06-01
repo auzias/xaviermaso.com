@@ -30,6 +30,13 @@ update msg model =
                 in
                     ( model, command )
 
+            RedirectTo path ->
+                let
+                    command =
+                        Navigation.load path
+                in
+                    ( model, command )
+
             ShowDescriptionOf project ->
                 case project.seriousness of
                     Just "hack" ->

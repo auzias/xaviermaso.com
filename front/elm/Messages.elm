@@ -9,5 +9,6 @@ type Msg
     = OnFetchProjects (WebData (List Project))
     | OnLocationChange Location
     | NavigateTo String
+    | RedirectTo String
     | CloseProjectDescription Project
     | ShowDescriptionOf Project

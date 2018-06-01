@@ -3,7 +3,7 @@ module View exposing (..)
 import Messages exposing (..)
 import Models exposing (Model)
 import Projects.View exposing (..)
-import Routing exposing (cvPath, projectsPath)
+import Routing exposing (blogPath, cvPath, projectsPath)
 import Html exposing (Html, a, br, button, div, i, object, text)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
@@ -113,11 +113,14 @@ formatTextLine textline =
 
 mainView : Html Msg
 mainView =
-    div [ class "row" ]
-        [ div [ class "col-md-6" ]
-            [ button [ class "tile green", onClick (NavigateTo projectsPath) ] [ text "Projects" ]
+        div [ class "row" ]
+            [ div [ class "col-md-4" ]
+                  [ button [ class "tile blue", onClick (RedirectTo blogPath) ] [ text "Blog" ]
+                  ]
+            , div [ class "col-md-4" ]
+                  [ button [ class "tile green", onClick (NavigateTo projectsPath) ] [ text "Projects" ]
+                  ]
+            , div [ class "col-md-4" ]
+                  [ button [ class "tile orange", onClick (NavigateTo cvPath) ] [ text "CV" ]
+                  ]
             ]
-        , div [ class "col-md-6" ]
-            [ button [ class "tile orange", onClick (NavigateTo cvPath) ] [ text "CV" ]
-            ]
-        ]
