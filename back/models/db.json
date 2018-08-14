@@ -36,8 +36,8 @@
     "title": "MeuhOnAir",
     "dates": "december 2017",
     "tags": "python, development, ops",
-    "link": "https://twitter.com/meuhonair",
-    "description": "Fan of <a target='_blank' href='http://www.radiomeuh.com/'>RadioMeuh.com</a> (French webradio), I made a twitter live stream of their playlist.<br/>It's Python code scrapping their playlist, comparing to what has already been published thanks to a Redis store, then calling the Twitter API to tweet what's necessary. Everything scheduled from Heroku."
+    "link": "https://mamot.fr/@meuhonair",
+    "description": "Fan of <a target='_blank' href='http://www.radiomeuh.com/'>RadioMeuh.com</a> (French webradio), I made a Mastodon live stream of their playlist.<br/>It's Python code scrapping their playlist, comparing to what has already been published thanks to a Redis store, then calling the Mastodon API to toot what's necessary. Everything scheduled from Heroku."
   }, {
     "id": "10",
     "tileContent": "alfred",
