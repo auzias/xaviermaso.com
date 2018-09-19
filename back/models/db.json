@@ -46,7 +46,7 @@
     "dates": "december 2017",
     "tags": "ruby, ops",
     "link": "https://github.com/Pamplemousse/alfred",
-    "description": "My very own \"personal assistant\". Even though I have great plans for him, this project is abandonned (for now...).<br/>Triggered by a text that I send to him (well, I got rid of my smartphone), all it does is scrapping my University schedule (from Spring 2017...), recognize my lectures, and send me a text back to inform me at which time and where the next one will happen.<br/>This project involve a bit of web scrapping, interacting with the Twilio api. It is written in Ruby and running on Heroku."
+    "description": "My very own \"personal assistant\". Even though I have great plans for him, this project is abandonned (for now...).<br/>Triggered by a text that I send to him (well, I got rid of my smartphone), all it does is scrapping my University schedule (from Autumn 2018), recognize my lectures, and send me a text back to inform me at which time and where the next one will happen.<br/>This project involve a bit of web scrapping, interacting with the Twilio api. It is written in Ruby and running on Heroku."
   }, {
     "id": "11",
     "tileContent": "owasp-top-ten",
