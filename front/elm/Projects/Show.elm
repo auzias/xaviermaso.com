@@ -1,7 +1,7 @@
 module Projects.Show exposing (..)
 
 import Messages exposing (..)
-import Projects.Models exposing (Project)
+import Projects.Models exposing (Link, Project)
 import Html exposing (..)
 import Html.Attributes exposing (class, href, id, property, style, target)
 import Html.Events exposing (onClick)
@@ -18,14 +18,6 @@ view project =
 
                 Just description ->
                     description
-
-        linkValue =
-            case project.link of
-                Nothing ->
-                    ""
-
-                Just link ->
-                    link
     in
         div [ class "row" ]
             [ div [ class "col-md-12" ]
@@ -47,9 +39,7 @@ view project =
                             ]
                             []
                         ]
-                    , h3 []
-                        [ a [ href linkValue, target "_blank" ] [ text linkValue ]
-                        ]
+                    , div [] (List.map formatLink project.links)
                     , i
                         [ class "fa fa-close fa-2x"
                         , style
@@ -62,4 +52,20 @@ view project =
                         []
                     ]
                 ]
+            ]
+
+
+formatLink : Link -> Html Msg
+formatLink link =
+    let
+        value =
+            case link.value of
+                Nothing ->
+                    link.target
+
+                Just value ->
+                    value
+    in
+        h3 []
+            [ a [ href link.target, target "_blank" ] [ text value ]
             ]

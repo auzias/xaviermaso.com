@@ -1,7 +1,7 @@
 module Projects.Commands exposing (..)
 
 import Messages exposing (Msg)
-import Projects.Models exposing (ProjectId, ProjectsUrl, Project)
+import Projects.Models exposing (Link, ProjectId, ProjectsUrl, Project)
 import Http
 import Json.Decode as Decode
 import Json.Decode.Pipeline exposing (decode, optional, required)
@@ -29,5 +29,12 @@ projectDecoder =
         |> optional "seriousness" (Decode.map Just Decode.string) Nothing
         |> required "dates" Decode.string
         |> required "tags" Decode.string
-        |> optional "link" (Decode.map Just Decode.string) Nothing
+        |> optional "links" (Decode.list linkDecoder) []
         |> optional "description" (Decode.map Just Decode.string) Nothing
+
+
+linkDecoder : Decode.Decoder Link
+linkDecoder =
+    decode Link
+        |> required "target" Decode.string
+        |> optional "value" (Decode.map Just Decode.string) Nothing
