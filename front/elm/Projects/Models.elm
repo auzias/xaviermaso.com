@@ -9,6 +9,12 @@ type alias ProjectsUrl =
     String
 
 
+type alias Link =
+    { target : String
+    , value : Maybe String
+    }
+
+
 type alias Project =
     { id : ProjectId
     , tileContent : String
@@ -16,6 +22,6 @@ type alias Project =
     , seriousness : Maybe String
     , dates : String
     , tags : String
-    , link : Maybe String
+    , links : List Link
     , description : Maybe String
     }
