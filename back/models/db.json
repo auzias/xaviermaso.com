@@ -74,13 +74,13 @@
     "tags": "nodejs stack (sailsjs, grunt, bower), associative entrepreneurship",
     "description": "Carrotmob France was a French non profit association organizing buycotts events to reward business’s commitment to making responsible social, economic and environmental changes.<br/>We were about ten persons organized to work remotely and following the Scrum method using Trello, Hangout, Skype and Github.<br/>I participated building the web-app, which front and back-end were using SailsJS, Bower, Jade and Grunt tasks."
   }, {
-   "id": "14",
-   "tileContent": "dice of life @ govhack",
-   "title": "Loaded Dice Of Life",
-   "seriousness": "hack",
-   "dates": "july 2015",
-   "tags": "game development, opendata",
-   "link": "https://github.com/LoadedDiceOfLife"
+    "id": "14",
+    "tileContent": "dice of life @ govhack",
+    "title": "Loaded Dice Of Life",
+    "seriousness": "hack",
+    "dates": "july 2015",
+    "tags": "game development, opendata",
+    "link": "https://github.com/LoadedDiceOfLife"
   }, {
     "id": "15",
     "tileContent": "wheredrop",
