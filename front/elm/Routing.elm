@@ -10,6 +10,7 @@ matchers =
     oneOf
         [ map MainRoute top
         , map CVRoute (s "cv")
+        , map MeowRoute (s "meow")
         , map ProjectsRoute (s "projects")
         , map SocialMediaRoute (s "social-media")
         ]
@@ -33,6 +34,11 @@ projectsPath =
 cvPath : String
 cvPath =
     "#cv"
+
+
+meowPath : String
+meowPath =
+    "#meow"
 
 
 blogPath : String

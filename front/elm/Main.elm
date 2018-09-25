@@ -3,6 +3,7 @@ module Main exposing (..)
 import Messages exposing (Msg)
 import Models exposing (Model, Flags, initialModel)
 import Projects.Commands exposing (fetchProjects)
+import Commands exposing (fetchCatGif)
 import Routing
 import Update exposing (update)
 import View exposing (view)
@@ -15,7 +16,7 @@ initialState flags location =
         currentRoute =
             Routing.parseLocation location
     in
-        ( initialModel currentRoute, fetchProjects flags.projectsUrl )
+        ( initialModel currentRoute, fetchProjects flags.projectsUrl, fetchCatGif flags.catGifUrl )
 
 
 subscriptions : Model -> Sub Msg

@@ -16,6 +16,9 @@ update msg model =
             Messages.OnFetchProjects response ->
                 ( { model | projects = response }, Cmd.none )
 
+            Messages.OnFetchCatGif response ->
+                ( { model | catGif | gifUrl = response }, Cmd.none )
+
             Messages.OnLocationChange location ->
                 let
                     newRoute =

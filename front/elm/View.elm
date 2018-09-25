@@ -3,7 +3,7 @@ module View exposing (..)
 import Messages exposing (..)
 import Models exposing (Model)
 import Projects.View exposing (..)
-import Routing exposing (blogPath, cvPath, projectsPath)
+import Routing exposing (blogPath, cvPath, meowPath, projectsPath)
 import Html exposing (Html, a, br, button, div, i, object, text)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
@@ -17,6 +17,9 @@ view model =
 
         Models.CVRoute ->
             cvView
+
+        Models.MeowRoute ->
+            meowView model
 
         Models.ProjectsRoute ->
             projectsView model
@@ -39,6 +42,13 @@ projectsView : Model -> Html Msg
 projectsView model =
     div []
         [ Projects.View.view model
+        ]
+
+
+meowView : Model -> Html Msg
+meowView model =
+    div []
+        [ text "Meoooooow"
         ]
 
 
@@ -122,5 +132,8 @@ mainView =
                   ]
             , div [ class "col-md-4" ]
                   [ button [ class "tile orange", onClick (NavigateTo cvPath) ] [ text "CV" ]
+                  ]
+            , div [ class "col-md-4" ]
+                  [ button [ class "tile orange", onClick (NavigateTo meowPath) ] [ text "Meow" ]
                   ]
             ]
