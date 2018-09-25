@@ -19,8 +19,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
-    "bootstrap": "^3.3.5",
-    "bootstrap-sass": "^3.3.6",
+    "bootstrap": "^4.1.1",
+    "bootstrap-sass": "^3.3.7",
     "browserify": "^12.0.1",
     "clean-css": "^3.4.12",
     "copy-webpack-plugin": "^3.0.1",
