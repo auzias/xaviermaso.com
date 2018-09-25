@@ -10,8 +10,7 @@ before_install:
     - npm install -g standard nsp nsp-preprocessor-yarn elm@0.18 elm-format
 
 script:
-    - standard
-    - elm-format --validate front/elm/**/*.elm
+    - npm run check
     - nsp --preprocessor yarn check
     - npm run build
 
