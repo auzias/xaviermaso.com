@@ -92,6 +92,10 @@ a:hover {
 .project-description {
   padding       : 10px;
   margin-bottom : 25px;
+
+  a {
+    text-decoration : underline;
+  }
 }
 
 .fa-close:hover {

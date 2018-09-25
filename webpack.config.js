@@ -130,6 +130,10 @@ if (TARGET_ENV === 'production') {
           to: 'xaviermaso.pdf'
         },
         {
+          from: 'front/static/documents/internship_report_2018.pdf',
+          to: 'internship_report_2018.pdf'
+        },
+        {
           from: 'front/static/img/favicon.ico'
         }
       ]),

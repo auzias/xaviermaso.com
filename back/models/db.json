@@ -1,6 +1,17 @@
 {
   "projects": [{
     "id": "0",
+    "tileContent": "owasp-zap",
+    "title": "OWASP ZAP",
+    "dates": "may 2018 - today",
+    "tags": "web security, javascript, R&D",
+    "links": [{
+      "target": "internship_report_2018.pdf",
+      "value": "See my internship report for a more in depth presentation"
+    }],
+    "description": "Intern at Mozilla during the summer of 2018 in the <a href='https://wiki.mozilla.org/Security/FirefoxOperations' target='_blank'>FoxSec</a> team. I worked on improving <a href='https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project'>OWASP ZAP</a>, for it to be able to scan \"modern\" web applications.<br/>The effort has been focused around two keys areas: write the <a href='https://github.com/zaproxy/zaproxy/issues/4939' target='_blank'>FrontEndScanner addon</a> (not yet released) for ZAP to allow users to run \"client-side scripts\"; and create a front-end library to help debug modern web pages: the <a href='https://www.npmjs.com/package/@zaproxy/front-end-tracker' target='_blank'>@zaproxy/front-end-tracker."
+  }, {
+    "id": "1",
     "tileContent": "redshield",
     "title": "RedShield (pro)",
     "dates": "january 2015 - april 2016",
@@ -10,14 +21,14 @@
      }],
     "description": "Not my own project: I was working as a Software Engineer at RedShield for a year and half.<br/>RedShield is a \"Shielding-with-a-service\" company providing a web application firewall, vulnerability scanner and analyzer to assist IT departments ensure the security of their systems."
   }, {
-    "id": "1",
+    "id": "2",
     "tileContent": "personal stack",
     "title": "Personal Stack",
     "dates": "2014 - today",
     "tags": "devops, docker, ansible",
     "description": "Co-owner of a dedicated server, used to manage personal services such as Gogits, Owncloud, Selfoss, Etherpad, Wallabag and websites.<br/>Running on Debian machines whose configuration has been automated with Ansible, and using Docker containers for modularity and isolation."
   }, {
-    "id": "2",
+    "id": "3",
     "tileContent": "cheminot.cer-sncf-bx.org",
     "title": "Front-end for SNCF's employees (pro)",
     "dates": "december 2013 - august 2014",
@@ -27,7 +38,7 @@
     }],
     "description": "Subject of my master thesis: build a website dedicated to SNCF’s employees.<br/>I was responsible of the whole project:<ul><li>Tasks and planning definition, resources and skills affectation to provide this new service within six months with a three person team.</li><li>Communication and product launching: define and reach targets, follow the adoption and usage of the product.</li><li>Integration within the existing information system: shared databases services management, web server deployment.</li><li>Quality management by software testing using Rspec and Capybara.</li><li>Git and Capistrano for code management and automated deployment.</li></ul>Back-end was written in Ruby-On-Rails. Front-end used Slim, SASS and CoffeeScript.<br/>The application was served by Nginx and Unicorn on an Ubuntu server. The database was PostgreSQL."
   }, {
-    "id": "3",
+    "id": "4",
     "tileContent": "xaviermaso.com",
     "title": "xaviermaso.com",
     "dates": "2014 - today",
@@ -37,7 +48,7 @@
     }],
     "description": "The gorgeous website you are looking at right now.<br/>Front-end written in Elm, back-end powered by ExpressJS."
   }, {
-    "id": "4",
+    "id": "5",
     "tileContent": "meuh on air",
     "title": "MeuhOnAir",
     "dates": "december 2017",
