@@ -1,6 +1,7 @@
 # xavier maso's website
 
   ![](https://travis-ci.org/Pamplemousse/xaviermaso.com.svg?branch=master)
+  ![Known Vulnerabilities](https://snyk.io/test/github/Pamplemousse/xaviermaso.com/badge.svg?targetFile=package.json)
 
   * powered by [expressjs](http://expressjs.com/) and [elm](http://elm-lang.org/)
   * running live at [xaviermaso.com](http://xaviermaso.com/)
