@@ -37,4 +37,4 @@ cvPath =
 
 blogPath : String
 blogPath =
-    "http://blog.xaviermaso.com"
+    "https://blog.xaviermaso.com"
