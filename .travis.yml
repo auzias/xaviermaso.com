@@ -1,17 +1,16 @@
 ---
 language: node_js
-node_js: "6"
+node_js: "10"
 
 cache: yarn
 
 services: docker
 
 before_install:
-    - npm install -g standard nsp nsp-preprocessor-yarn elm@0.18 elm-format
+    - npm install -g standard elm@0.18 elm-format
 
 script:
     - npm run check
-    - nsp --preprocessor yarn check
     - npm run build
 
 after_success:
