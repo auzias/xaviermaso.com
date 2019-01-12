@@ -46,7 +46,7 @@
     "url-loader": "^0.5.7",
     "watchify": "^3.7.0",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1",
+    "webpack-dev-server": ">=3.1.11",
     "webpack-merge": "^0.14.1"
   },
   "standard": {
