@@ -1,13 +1,18 @@
-module Models exposing (Flags, Model, Route(..), initialModel)
+module Models exposing (Flags, Model, initialModel)
 
+import Browser.Navigation exposing (Key)
 import Projects.Models exposing (..)
 import RemoteData exposing (WebData)
+import Routing exposing (Route)
+import Url exposing (Url)
+import Url.Parser exposing (parse)
 
 
 type alias Model =
     { projects : WebData (List Project)
     , currentProjects : ( Maybe Project, Maybe Project )
-    , route : Route
+    , key : Browser.Navigation.Key
+    , route : Maybe Route
     }
 
 
@@ -15,17 +20,10 @@ type alias Flags =
     { projectsUrl : ProjectsUrl }
 
 
-type Route
-    = MainRoute
-    | CVRoute
-    | ProjectsRoute
-    | SocialMediaRoute
-    | NotFoundRoute
-
-
-initialModel : Route -> Model
-initialModel route =
+initialModel : Browser.Navigation.Key -> Url -> Model
+initialModel key url =
     { projects = RemoteData.Loading
     , currentProjects = ( Nothing, Nothing )
-    , route = route
+    , key = key
+    , route = Url.Parser.parse Routing.routeParser url
     }

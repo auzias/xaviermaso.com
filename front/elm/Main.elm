@@ -1,21 +1,20 @@
 module Main exposing (initialState, main, subscriptions)
 
-import Messages exposing (Msg)
+import Browser exposing (UrlRequest)
+import Browser.Navigation exposing (Key)
+import Messages exposing (Msg(..))
 import Models exposing (Flags, Model, initialModel)
-import Navigation exposing (Location)
 import Projects.Commands exposing (fetchProjects)
-import Routing
+import Routing exposing (Route)
 import Update exposing (update)
+import Url exposing (Url)
+import Url.Parser exposing (parse)
 import View exposing (view)
 
 
-initialState : Flags -> Location -> ( Model, Cmd Msg )
-initialState flags location =
-    let
-        currentRoute =
-            Routing.parseLocation location
-    in
-    ( initialModel currentRoute, fetchProjects flags.projectsUrl )
+initialState : Flags -> Url -> Browser.Navigation.Key -> ( Model, Cmd Msg )
+initialState flags url key =
+    ( initialModel key url, fetchProjects flags.projectsUrl )
 
 
 subscriptions : Model -> Sub Msg
@@ -29,9 +28,11 @@ subscriptions model =
 
 main : Program Flags Model Msg
 main =
-    Navigation.programWithFlags Messages.OnLocationChange
+    Browser.application
         { init = initialState
-        , view = view
+        , onUrlChange = UrlChanged
+        , onUrlRequest = LinkClicked
         , update = update
         , subscriptions = subscriptions
+        , view = view
         }

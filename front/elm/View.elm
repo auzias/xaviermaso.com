@@ -1,31 +1,44 @@
 module View exposing (cvView, formatLink, formatTextLine, mainView, notFoundView, projectsView, socialMediaView, view)
 
-import Html exposing (Html, a, br, button, div, i, object, text)
+import Browser exposing (Document)
+import Html exposing (Html, a, br, button, div, h6, i, object, text)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onClick)
 import Messages exposing (..)
 import Models exposing (Model)
 import Projects.View exposing (..)
-import Routing exposing (blogPath, cvPath, projectsPath)
+import Routing exposing (blogPath, cvPath, projectsPath, rootPath, socialMediaPath)
 
 
-view : Model -> Html Msg
+view : Model -> Browser.Document Msg
 view model =
     case model.route of
-        Models.MainRoute ->
-            mainView
+        Just route ->
+            case route of
+                Routing.MainRoute ->
+                    { title = "XM | Main"
+                    , body = [ layoutify mainView ]
+                    }
 
-        Models.CVRoute ->
-            cvView
+                Routing.CVRoute ->
+                    { title = "XM | CV"
+                    , body = [ layoutify cvView ]
+                    }
 
-        Models.ProjectsRoute ->
-            projectsView model
+                Routing.ProjectsRoute ->
+                    { title = "XM | Projects"
+                    , body = [ layoutify (projectsView model) ]
+                    }
 
-        Models.SocialMediaRoute ->
-            socialMediaView
+                Routing.SocialMediaRoute ->
+                    { title = "XM | Projects"
+                    , body = [ layoutify socialMediaView ]
+                    }
 
-        Models.NotFoundRoute ->
-            notFoundView
+        Nothing ->
+            { title = "XM | 404"
+            , body = [ layoutify notFoundView ]
+            }
 
 
 notFoundView : Html Msg
@@ -49,7 +62,7 @@ cvView =
             [ class "col-md-12"
             , attribute "type" "application/pdf"
             , attribute "data" "xaviermaso.pdf"
-            , style [ ( "height", "80em" ) ]
+            , style "height" "80em"
             ]
             [ div [ class "message lightOrange" ]
                 [ br [] []
@@ -90,6 +103,21 @@ socialMediaView =
         ]
 
 
+mainView : Html Msg
+mainView =
+    div [ class "row" ]
+        [ div [ class "col-md-4" ]
+            [ button [ class "tile blue", onClick (RedirectTo blogPath) ] [ text "Blog" ]
+            ]
+        , div [ class "col-md-4" ]
+            [ button [ class "tile green", onClick (NavigateTo projectsPath) ] [ text "Projects" ]
+            ]
+        , div [ class "col-md-4" ]
+            [ button [ class "tile orange", onClick (NavigateTo cvPath) ] [ text "CV" ]
+            ]
+        ]
+
+
 formatLink : ( String, String ) -> Html Msg
 formatLink ( destination, title ) =
     div [ class "row" ]
@@ -111,16 +139,71 @@ formatTextLine textline =
         [ text textline ]
 
 
-mainView : Html Msg
-mainView =
-    div [ class "row" ]
-        [ div [ class "col-md-4" ]
-            [ button [ class "tile blue", onClick (RedirectTo blogPath) ] [ text "Blog" ]
+nameLine : Html Msg
+nameLine =
+    div [ class "row name-line" ]
+        [ div [ class "name", onClick (NavigateTo rootPath) ]
+            [ text "Xavier Maso" ]
+        ]
+
+
+socialRow : Html Msg
+socialRow =
+    div [ class "row top-line" ]
+        [ div [ class "col-md-8" ]
+            [ div [ class "col-md-8" ]
+                [ div [ class "row social" ]
+                    [ a [ href "mailto:xavier.maso@net-c.com", target "_blank" ]
+                        [ i [ class "fa fa-envelope-o social-icon", alt "Email image link mailing to xavier.maso@net-c.com ." ]
+                            []
+                        ]
+                    , a [ href "https://pxlfd.me/Pamplemousse", target "_blank" ]
+                        [ i [ class "fa fa-pixelfed social-icon", alt "PixelFed image link for Xavier Maso's PixelFed profile." ]
+                            []
+                        ]
+                    , a [ href "https://mamot.fr/@Pamplemouss_", target "_blank" ]
+                        [ i [ class "fa fa-mastodon social-icon", alt "Mastodon image link for @Pamplemouss_." ]
+                            []
+                        ]
+                    , a [ href "https://twitter.com/Pamplemouss_", target "_blank" ]
+                        [ i [ class "fa fa-twitter social-icon", alt "Twitter image link for @Pamplemouss_." ]
+                            []
+                        ]
+                    , a [ href "", onClick (NavigateTo socialMediaPath) ]
+                        [ i [ class "fa fa-facebook social-icon", alt "Facebook image link to some insights about social media." ]
+                            []
+                        ]
+                    , a [ href "https://github.com/Pamplemousse", target "_blank" ]
+                        [ i [ class "fa fa-github social-icon", alt "Github image link for Pamplemousse's account." ]
+                            []
+                        ]
+                    , a [ href "https://www.linkedin.com/pub/xavier-maso/39/4a/96b", target "_blank" ]
+                        [ i [ class "fa fa-linkedin social-icon", alt "Linkedin image link for Xavier Maso's linkedin profile." ]
+                            []
+                        ]
+                    ]
+                ]
             ]
-        , div [ class "col-md-4" ]
-            [ button [ class "tile green", onClick (NavigateTo projectsPath) ] [ text "Projects" ]
+        ]
+
+
+footer : Html Msg
+footer =
+    div [ class "row footer" ]
+        [ div [ class "col-md-2 col-md-offset-10" ]
+            [ div [ class "section" ]
+                [ h6 []
+                    [ text "Such reserved rights." ]
+                ]
             ]
-        , div [ class "col-md-4" ]
-            [ button [ class "tile orange", onClick (NavigateTo cvPath) ] [ text "CV" ]
-            ]
+        ]
+
+
+layoutify : Html Msg -> Html Msg
+layoutify content =
+    div [ class "container" ]
+        [ nameLine
+        , socialRow
+        , content
+        , footer
         ]

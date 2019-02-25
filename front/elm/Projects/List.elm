@@ -16,7 +16,7 @@ projectTile : Int -> Project -> Html Msg
 projectTile index project =
     let
         color =
-            if index % 2 == 0 then
+            if modBy 2 index == 0 then
                 "green"
 
             else

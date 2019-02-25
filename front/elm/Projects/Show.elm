@@ -24,11 +24,9 @@ view project =
             [ div [ class "project-description lightGreen" ]
                 [ h1 [] [ text project.title ]
                 , h3
-                    [ style
-                        [ ( "position", "absolute" )
-                        , ( "top", "18px" )
-                        , ( "right", "55px" )
-                        ]
+                    [ style "position" "absolute"
+                    , style "top" "18px"
+                    , style "right" "55px"
                     ]
                     [ text project.dates ]
                 , h4 [] [ text project.tags ]
@@ -42,11 +40,9 @@ view project =
                 , div [] (List.map formatLink project.links)
                 , i
                     [ class "fa fa-close fa-2x"
-                    , style
-                        [ ( "position", "absolute" )
-                        , ( "top", "10px" )
-                        , ( "right", "23px" )
-                        ]
+                    , style "position" "absolute"
+                    , style "top" "10px"
+                    , style "right" "23px"
                     , onClick (CloseProjectDescription project)
                     ]
                     []
@@ -58,7 +54,7 @@ view project =
 formatLink : Link -> Html Msg
 formatLink link =
     let
-        value =
+        link_value =
             case link.value of
                 Nothing ->
                     link.target
@@ -67,5 +63,5 @@ formatLink link =
                     value
     in
     h3 []
-        [ a [ href link.target, target "_blank" ] [ text value ]
+        [ a [ href link.target, target "_blank" ] [ text link_value ]
         ]

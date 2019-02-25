@@ -39,7 +39,7 @@ view model =
                 ]
 
         RemoteData.Failure error ->
-            text (toString error)
+            text (Debug.toString error)
 
 
 currentProjectView : Maybe Project -> Html Msg

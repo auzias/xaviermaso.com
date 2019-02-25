@@ -1,40 +1,46 @@
-module Routing exposing (blogPath, cvPath, matchers, parseLocation, projectsPath)
+module Routing exposing (Route(..), blogPath, cvPath, projectsPath, rootPath, routeParser, socialMediaPath)
 
-import Models exposing (Route(..))
-import Navigation exposing (Location)
-import UrlParser exposing (..)
+import Browser.Navigation exposing (Key)
+import Url.Parser exposing (..)
 
 
-matchers : Parser (Route -> a) a
-matchers =
+type Route
+    = MainRoute
+    | CVRoute
+    | ProjectsRoute
+    | SocialMediaRoute
+
+
+routeParser : Parser (Route -> a) a
+routeParser =
     oneOf
         [ map MainRoute top
-        , map CVRoute (s "cv")
-        , map ProjectsRoute (s "projects")
-        , map SocialMediaRoute (s "social-media")
+        , map CVRoute (s cvPath)
+        , map ProjectsRoute (s projectsPath)
+        , map SocialMediaRoute (s socialMediaPath)
         ]
-
-
-parseLocation : Location -> Route
-parseLocation location =
-    case parseHash matchers location of
-        Just route ->
-            route
-
-        Nothing ->
-            NotFoundRoute
 
 
 projectsPath : String
 projectsPath =
-    "#projects"
+    "projects"
 
 
 cvPath : String
 cvPath =
-    "#cv"
+    "cv"
 
 
 blogPath : String
 blogPath =
     "https://blog.xaviermaso.com"
+
+
+rootPath : String
+rootPath =
+    "/"
+
+
+socialMediaPath : String
+socialMediaPath =
+    "socialMedia"

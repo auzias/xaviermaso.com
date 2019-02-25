@@ -30,17 +30,13 @@ var commonConfig = {
       {
         test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/,
         use: 'url-loader'
-      },
-      {
-        test: /\.pug$/,
-        use: 'pug-loader'
       }
     ]
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: 'front/static/index.pug',
+      template: 'front/static/index.html',
       inject: 'body',
       filename: 'index.html'
     }),
@@ -55,7 +51,6 @@ if (TARGET_ENV === 'development') {
   console.log('Serving locally...')
 
   module.exports = merge(commonConfig, {
-
     entry: [
       path.join(__dirname, 'front/static/index.js')
     ],
@@ -108,7 +103,6 @@ if (TARGET_ENV === 'production') {
   console.log('Building for prod...')
 
   module.exports = merge(commonConfig, {
-
     entry: path.join(__dirname, 'front/static/index.js'),
 
     mode: 'production',
