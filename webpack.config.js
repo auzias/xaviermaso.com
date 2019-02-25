@@ -2,9 +2,10 @@ var path = require('path')
 var webpack = require('webpack')
 var merge = require('webpack-merge')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-var autoprefixer = require('autoprefixer')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var MiniCssExtractPlugin = require('mini-css-extract-plugin')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
+var UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 console.log('WEBPACK GO!')
 
@@ -19,20 +20,20 @@ var commonConfig = {
   },
 
   resolve: {
-    modulesDirectories: ['node_modules'],
-    extensions: ['', '.js', '.elm']
+    modules: ['node_modules'],
+    extensions: ['.js', '.elm']
   },
 
   module: {
     noParse: /\.elm$/,
-    loaders: [
+    rules: [
       {
         test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/,
-        loader: 'url-loader'
+        use: 'url-loader'
       },
       {
         test: /\.pug$/,
-        loader: 'pug-loader'
+        use: 'pug-loader'
       }
     ]
   },
@@ -43,13 +44,13 @@ var commonConfig = {
       inject: 'body',
       filename: 'index.html'
     }),
-    new webpack.EnvironmentPlugin(['NODE_ENV'])
-  ],
-
-  postcss: [ autoprefixer({ browsers: ['last 2 versions'] }) ]
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: 'development'
+    })
+  ]
 }
 
-// additional webpack settings for local env (when invoked by 'npm start')
+// additional webpack settings for prod env (when invoked via 'npm run dev')
 if (TARGET_ENV === 'development') {
   console.log('Serving locally...')
 
@@ -68,20 +69,29 @@ if (TARGET_ENV === 'development') {
       progress: true
     },
 
+    mode: 'development',
+
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.elm$/,
           exclude: [/elm-stuff/, /node_modules/],
-          loader: 'elm-hot!elm-webpack?verbose=true&warn=true'
+          use: [
+            { loader: 'elm-webpack-loader',
+              options: {
+                debug: true,
+                forceWatch: true
+              }
+            }
+          ]
         },
         {
           test: /\.(css|scss)$/,
-          loaders: [
-            'style-loader',
-            'css-loader',
-            'postcss-loader',
-            'sass-loader'
+          use: [
+            { loader: 'style-loader', options: { sourceMap: true } },
+            { loader: 'css-loader', options: { sourceMap: true } },
+            { loader: 'postcss-loader', options: { sourceMap: true } },
+            { loader: 'sass-loader', options: { sourceMap: true } }
           ]
         }
       ]
@@ -101,21 +111,31 @@ if (TARGET_ENV === 'production') {
 
     entry: path.join(__dirname, 'front/static/index.js'),
 
+    mode: 'production',
+
     module: {
-      loaders: [
+      rules: [
         {
           test: /\.elm$/,
           exclude: [/elm-stuff/, /node_modules/],
-          loader: 'elm-webpack'
+          use: 'elm-webpack-loader'
         },
         {
           test: /\.(css|scss)$/,
-          loader: ExtractTextPlugin.extract('style-loader', [
+          use: [
+            MiniCssExtractPlugin.loader,
             'css-loader',
             'postcss-loader',
             'sass-loader'
-          ])
+          ]
         }
+      ]
+    },
+
+    optimization: {
+      minimizer: [
+        new UglifyJsPlugin(),
+        new OptimizeCSSAssetsPlugin({})
       ]
     },
 
@@ -138,17 +158,11 @@ if (TARGET_ENV === 'production') {
         }
       ]),
 
-      new webpack.optimize.OccurenceOrderPlugin(),
-
       // extract CSS into a separate file
-      new ExtractTextPlugin('./[hash].css', { allChunks: true }),
-
-      // minify & mangle JS/CSS
-      new webpack.optimize.UglifyJsPlugin({
-        minimize: true,
-        compressor: { warnings: false }
+      new MiniCssExtractPlugin({
+        filename: '[hash].css',
+        chunkFilename: '[id].[hash].css'
       })
     ]
-
   })
 }
