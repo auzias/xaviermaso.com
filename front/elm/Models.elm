@@ -1,4 +1,4 @@
-module Models exposing (..)
+module Models exposing (Flags, Model, Route(..), initialModel)
 
 import Projects.Models exposing (..)
 import RemoteData exposing (WebData)

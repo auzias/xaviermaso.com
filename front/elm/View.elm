@@ -1,12 +1,12 @@
-module View exposing (..)
+module View exposing (cvView, formatLink, formatTextLine, mainView, notFoundView, projectsView, socialMediaView, view)
 
+import Html exposing (Html, a, br, button, div, i, object, text)
+import Html.Attributes exposing (..)
+import Html.Events exposing (onClick)
 import Messages exposing (..)
 import Models exposing (Model)
 import Projects.View exposing (..)
 import Routing exposing (blogPath, cvPath, projectsPath)
-import Html exposing (Html, a, br, button, div, i, object, text)
-import Html.Attributes exposing (..)
-import Html.Events exposing (onClick)
 
 
 view : Model -> Html Msg
@@ -84,10 +84,10 @@ socialMediaView =
             , "Therefore, if you want to connect to me (Thank you!), you can flick me an email, write me a post-card or come to say 'Hi' in person ; deep and meaningful relationships all start with a bit of effort and a leap of faith."
             ]
     in
-        div [ class "jumbotron" ]
-            [ div [] (List.map formatTextLine textlines)
-            , div [ class "resource-links-box" ] (List.map formatLink links)
-            ]
+    div [ class "jumbotron" ]
+        [ div [] (List.map formatTextLine textlines)
+        , div [ class "resource-links-box" ] (List.map formatLink links)
+        ]
 
 
 formatLink : ( String, String ) -> Html Msg

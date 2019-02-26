@@ -1,13 +1,13 @@
-module Projects.View exposing (..)
+module Projects.View exposing (currentProjectView, view)
 
+import Html exposing (Html, div, text)
+import Html.Attributes exposing (class)
+import List exposing (filter)
 import Messages exposing (..)
 import Models exposing (Model)
 import Projects.List exposing (view)
 import Projects.Models exposing (Project)
 import Projects.Show exposing (view)
-import Html exposing (Html, div, text)
-import Html.Attributes exposing (class)
-import List exposing (filter)
 import RemoteData exposing (WebData)
 import Tuple exposing (first, second)
 
@@ -24,19 +24,19 @@ view model =
         RemoteData.Success projects ->
             let
                 seriousProjects =
-                    filter (\project -> project.seriousness /= (Just "hack")) projects
+                    filter (\project -> project.seriousness /= Just "hack") projects
 
                 hacks =
-                    filter (\project -> project.seriousness == (Just "hack")) projects
+                    filter (\project -> project.seriousness == Just "hack") projects
             in
-                div []
-                    [ div [ class "projects-header" ] [ text "serious stuff" ]
-                    , currentProjectView (first model.currentProjects)
-                    , Projects.List.view seriousProjects
-                    , div [ class "projects-header" ] [ text "less serious stuff" ]
-                    , currentProjectView (second model.currentProjects)
-                    , Projects.List.view hacks
-                    ]
+            div []
+                [ div [ class "projects-header" ] [ text "serious stuff" ]
+                , currentProjectView (first model.currentProjects)
+                , Projects.List.view seriousProjects
+                , div [ class "projects-header" ] [ text "less serious stuff" ]
+                , currentProjectView (second model.currentProjects)
+                , Projects.List.view hacks
+                ]
 
         RemoteData.Failure error ->
             text (toString error)

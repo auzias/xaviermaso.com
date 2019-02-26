@@ -1,12 +1,12 @@
-module Main exposing (..)
+module Main exposing (initialState, main, subscriptions)
 
 import Messages exposing (Msg)
-import Models exposing (Model, Flags, initialModel)
+import Models exposing (Flags, Model, initialModel)
+import Navigation exposing (Location)
 import Projects.Commands exposing (fetchProjects)
 import Routing
 import Update exposing (update)
 import View exposing (view)
-import Navigation exposing (Location)
 
 
 initialState : Flags -> Location -> ( Model, Cmd Msg )
@@ -15,7 +15,7 @@ initialState flags location =
         currentRoute =
             Routing.parseLocation location
     in
-        ( initialModel currentRoute, fetchProjects flags.projectsUrl )
+    ( initialModel currentRoute, fetchProjects flags.projectsUrl )
 
 
 subscriptions : Model -> Sub Msg

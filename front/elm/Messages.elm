@@ -1,7 +1,7 @@
-module Messages exposing (..)
+module Messages exposing (Msg(..))
 
-import Projects.Models exposing (Project)
 import Navigation exposing (Location)
+import Projects.Models exposing (Project)
 import RemoteData exposing (WebData)
 
 

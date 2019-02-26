@@ -1,4 +1,4 @@
-module Routing exposing (..)
+module Routing exposing (blogPath, cvPath, matchers, parseLocation, projectsPath)
 
 import Models exposing (Route(..))
 import Navigation exposing (Location)
@@ -17,7 +17,7 @@ matchers =
 
 parseLocation : Location -> Route
 parseLocation location =
-    case (parseHash matchers location) of
+    case parseHash matchers location of
         Just route ->
             route
 

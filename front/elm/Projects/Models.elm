@@ -1,4 +1,4 @@
-module Projects.Models exposing (..)
+module Projects.Models exposing (Link, Project, ProjectId, ProjectsUrl)
 
 
 type alias ProjectId =
