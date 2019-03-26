@@ -58,6 +58,16 @@
     }],
     "description": "Fan of <a target='_blank' href='http://www.radiomeuh.com/'>RadioMeuh.com</a> (French webradio), I made a Mastodon live stream of their playlist.<br/>It's Python code scrapping their playlist, comparing to what has already been published thanks to a Redis store, then calling the Mastodon API to toot what's necessary. Everything scheduled from Heroku."
   }, {
+    "id": "6",
+    "tileContent": "rusty calculator",
+    "title": "A dummy \"calculator\" written in Rust",
+    "dates": "fall 2018",
+    "tags": "rust",
+    "links": [{
+      "target": "https://github.com/Pamplemousse/mathematical_expression_evaluation"
+    }],
+    "description": "Wanting to test and learn more about Rust and the compilation process.<br/>Given a mathematical expression to compute, represented as a string, the program performs the following: <ul><li>tokenization;</li><li>parsing to produce an AST using the <a target='_blank' href='https://en.wikipedia.org/wiki/Shunting_yard_algorithm'>Shunting Yard algorithm</a>;</li><li>evaluation of this AST to compute the result.</li></ul>"
+  }, {
     "id": "10",
     "tileContent": "alfred",
     "title": "Alfred",
