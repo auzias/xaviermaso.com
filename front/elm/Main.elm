@@ -22,10 +22,6 @@ subscriptions model =
     Sub.none
 
 
-
--- MAIN
-
-
 main : Program Flags Model Msg
 main =
     Browser.application

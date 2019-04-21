@@ -21,9 +21,9 @@ routeParser =
         ]
 
 
-projectsPath : String
-projectsPath =
-    "projects"
+blogPath : String
+blogPath =
+    "https://blog.xaviermaso.com"
 
 
 cvPath : String
@@ -31,16 +31,16 @@ cvPath =
     "cv"
 
 
-blogPath : String
-blogPath =
-    "https://blog.xaviermaso.com"
+facebookPath : String
+facebookPath =
+    "facebook"
+
+
+projectsPath : String
+projectsPath =
+    "projects"
 
 
 rootPath : String
 rootPath =
     "/"
-
-
-facebookPath : String
-facebookPath =
-    "facebook"
