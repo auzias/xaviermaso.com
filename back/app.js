@@ -19,8 +19,8 @@ if (process.env.NODE_ENV !== 'production') {
   app.use(cors())
 }
 
-app.use('/', require('./routes/index'))
-app.use('/projects', require('./routes/projects'))
+app.use('/api/projects', require('./routes/projects'))
+app.use('*', require('./routes/index'))
 
 // catch 404 and forwarding to error handler
 app.use(function (req, res, next) {
