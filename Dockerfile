@@ -18,4 +18,4 @@ COPY dist /usr/src/app/dist
 
 EXPOSE 8000
 
-CMD ["npm", "run", "start-back"]
+CMD ["npm", "run", "start:back"]
