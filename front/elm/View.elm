@@ -1,4 +1,4 @@
-module View exposing (cvView, formatLink, formatTextLine, mainView, notFoundView, projectsView, socialMediaView, view)
+module View exposing (view)
 
 import Browser exposing (Document)
 import Html exposing (Html, a, br, button, div, h6, i, object, text)
@@ -7,7 +7,7 @@ import Html.Events exposing (onClick)
 import Messages exposing (..)
 import Models exposing (Model)
 import Projects.View exposing (..)
-import Routing exposing (blogPath, cvPath, projectsPath, rootPath, socialMediaPath)
+import Routing exposing (blogPath, cvPath, facebookPath, projectsPath, rootPath)
 
 
 view : Model -> Browser.Document Msg
@@ -30,9 +30,9 @@ view model =
                     , body = [ layoutify (projectsView model) ]
                     }
 
-                Routing.SocialMediaRoute ->
+                Routing.FacebookRoute ->
                     { title = "XM | Projects"
-                    , body = [ layoutify socialMediaView ]
+                    , body = [ layoutify facebookView ]
                     }
 
         Nothing ->
@@ -78,8 +78,8 @@ cvView =
         ]
 
 
-socialMediaView : Html Msg
-socialMediaView =
+facebookView : Html Msg
+facebookView =
     let
         links =
             [ ( "https://www.youtube.com/watch?v=5MC2X-LRbkE", "Millenials in the Workplace (Simon Sinek)" )
@@ -169,7 +169,7 @@ socialRow =
                         [ i [ class "fa fa-twitter social-icon", alt "Twitter image link for @Pamplemouss_." ]
                             []
                         ]
-                    , a [ href "", onClick (NavigateTo socialMediaPath) ]
+                    , a [ href "", onClick (NavigateTo facebookPath) ]
                         [ i [ class "fa fa-facebook social-icon", alt "Facebook image link to some insights about social media." ]
                             []
                         ]

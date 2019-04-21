@@ -1,4 +1,4 @@
-module Routing exposing (Route(..), blogPath, cvPath, projectsPath, rootPath, routeParser, socialMediaPath)
+module Routing exposing (Route(..), blogPath, cvPath, facebookPath, projectsPath, rootPath, routeParser)
 
 import Browser.Navigation exposing (Key)
 import Url.Parser exposing (..)
@@ -8,7 +8,7 @@ type Route
     = MainRoute
     | CVRoute
     | ProjectsRoute
-    | SocialMediaRoute
+    | FacebookRoute
 
 
 routeParser : Parser (Route -> a) a
@@ -17,7 +17,7 @@ routeParser =
         [ map MainRoute top
         , map CVRoute (s cvPath)
         , map ProjectsRoute (s projectsPath)
-        , map SocialMediaRoute (s socialMediaPath)
+        , map FacebookRoute (s facebookPath)
         ]
 
 
@@ -41,6 +41,6 @@ rootPath =
     "/"
 
 
-socialMediaPath : String
-socialMediaPath =
-    "socialMedia"
+facebookPath : String
+facebookPath =
+    "facebook"
