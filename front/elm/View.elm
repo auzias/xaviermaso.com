@@ -8,10 +8,15 @@ import Messages exposing (..)
 import Models exposing (Model)
 import Projects.View exposing (..)
 import Routing exposing (blogPath, cvPath, facebookPath, projectsPath, rootPath)
+import SocialMedia.View exposing (view)
 
 
 view : Model -> Browser.Document Msg
 view model =
+    let
+        layoutify =
+            layout model
+    in
     case model.route of
         Just route ->
             case route of
@@ -147,46 +152,6 @@ nameLine =
         ]
 
 
-socialRow : Html Msg
-socialRow =
-    div [ class "row top-line" ]
-        [ div [ class "col-md-8" ]
-            [ div [ class "col-md-8" ]
-                [ div [ class "row social" ]
-                    [ a [ href "mailto:xavier.maso@net-c.com", target "_blank" ]
-                        [ i [ class "fa fa-envelope-o social-icon", alt "Email image link mailing to xavier.maso@net-c.com ." ]
-                            []
-                        ]
-                    , a [ href "https://pxlfd.me/Pamplemousse", target "_blank" ]
-                        [ i [ class "fa fa-pixelfed social-icon", alt "PixelFed image link for Xavier Maso's PixelFed profile." ]
-                            []
-                        ]
-                    , a [ href "https://mamot.fr/@Pamplemouss_", target "_blank" ]
-                        [ i [ class "fa fa-mastodon social-icon", alt "Mastodon image link for @Pamplemouss_." ]
-                            []
-                        ]
-                    , a [ href "https://twitter.com/Pamplemouss_", target "_blank" ]
-                        [ i [ class "fa fa-twitter social-icon", alt "Twitter image link for @Pamplemouss_." ]
-                            []
-                        ]
-                    , a [ href "", onClick (NavigateTo facebookPath) ]
-                        [ i [ class "fa fa-facebook social-icon", alt "Facebook image link to some insights about social media." ]
-                            []
-                        ]
-                    , a [ href "https://github.com/Pamplemousse", target "_blank" ]
-                        [ i [ class "fa fa-github social-icon", alt "Github image link for Pamplemousse's account." ]
-                            []
-                        ]
-                    , a [ href "https://www.linkedin.com/pub/xavier-maso/39/4a/96b", target "_blank" ]
-                        [ i [ class "fa fa-linkedin social-icon", alt "Linkedin image link for Xavier Maso's linkedin profile." ]
-                            []
-                        ]
-                    ]
-                ]
-            ]
-        ]
-
-
 footer : Html Msg
 footer =
     div [ class "row footer" ]
@@ -199,11 +164,11 @@ footer =
         ]
 
 
-layoutify : Html Msg -> Html Msg
-layoutify content =
+layout : Model -> Html Msg -> Html Msg
+layout model content =
     div [ class "container" ]
         [ nameLine
-        , socialRow
+        , SocialMedia.View.view model
         , content
         , footer
         ]
