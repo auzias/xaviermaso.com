@@ -10,6 +10,8 @@ var projectsUrl = API + '/projects'
 
 var Elm = require('../elm/Main').Elm
 
-Elm.Main.init({ flags: {
-  projectsUrl: projectsUrl
-} })
+Elm.Main.init({
+  flags: {
+    projectsUrl: projectsUrl
+  }
+})
