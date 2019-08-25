@@ -6,9 +6,6 @@ cache: yarn
 
 services: docker
 
-before_install:
-    - npm install -g standard elm@0.19 elm-format
-
 script:
     - npm run check
     - npm run build
